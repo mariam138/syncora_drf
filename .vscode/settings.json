@@ -12,7 +12,7 @@
       "**/core.python*": true,
       "**/CVS": true
    },
-   "files.autoSave": "off",
+   "files.autoSave": "afterDelay",
    "workbench.colorTheme": "Eva Light Bold",
    "terminal.integrated.gpuAcceleration": "canvas",
 }
