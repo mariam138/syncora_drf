@@ -43,3 +43,52 @@ Like the *Task* model, the **Event** model also has a many-to-one relationship w
 ##### Note
 
 The final custom model for the app is the **Note** model. Same as the *Task* and *Event* models, the **Note** model has a many-to-one relationship with the *Profile* model. A `title` field is provided but this field is optional, which allows a user to save time when writing a note as a title may not always be necessary. `date_created` and `date_updated` fields are part of the model. These fields aren't editable by the user, but will help in organising and filtering notes. Each time a note is updated, it will then appear at the top of the notes list unless the user chooses a different filter. Finally, the **Note** model contains a `content` field where the main body of the note will be written.
+
+## API Endpoints
+
+Once the user stories were created, they were then mapped out to different API endpoints and their url's. This was to help with planning which HTTP methods and views would be needed. Below is a table of all the API endpoints and which user stories they relate to.
+
+### Profile API Endpoints
+
+| HTTP   | URL          | CRUD Operation | CRUD Description       | View Name | User Story    |
+| ------ | ------------ | -------------- | ---------------------- | --------- | ------------- |
+| GET    | /profile/:id | read           | retrieve profile by id | DETAIL    | #36           |
+| PUT    | /profile/:id | update         | edit profile by id     | DETAIL    | #35, #37      |
+| DELETE | /profile/:id | delete         | delete profile by id   | DETAIL    | #19, #20, #21 |
+
+### Task API Endpoints
+
+|        |            |                |                                  |           |                    |
+| ------ | ---------- | -------------- | -------------------------------- | --------- | ------------------ |
+| HTTP   | URL        | CRUD Operation | CRUD Description                 | View Name | User Story         |
+| GET    | /dashboard | read           | view list of tasks on dashboard  | LIST      | #23                |
+| GET    | /tasks     | read           | view list of tasks on tasks page | LIST      | #30, #40           |
+| GET    | /tasks/:id | read           | view task detail by id           | DETAIL    | #39                |
+| POST   | /tasks     | create         | create a new task                | LIST      | #38, #44, #46, #27 |
+| PUT    | /tasks/:id | update         | edit or update a task by id      | DETAIL    | #41, #43           |
+| DELETE | /tasks/:id | delete         | delete a task by id              | DETAIL    | #42                |
+
+### Event API Endpoints
+
+| HTTP   | URL         | CRUD Operation | CRUD Description                   | View Name | User Story         |
+| ------ | ----------- | -------------- | ---------------------------------- | --------- | ------------------ |
+| GET    | /dashboard  | read           | view list of events on dashboard   | LIST      | #22                |
+| GET    | /events     | read           | view list of events on events page | LIST      | #29, #52           |
+| GET    | /events/:id | read           | view event detail by id            | DETAIL    | #51                |
+| POST   | /events     | create         | create a new event                 | LIST      | #50, #26, #55, #57 |
+| PUT    | /events/:id | update         | update an event by id              | DETAIL    | #53                |
+| DELETE | /events/:id | delete         | delete a task by id                | DETAIL    | #54                |
+
+### Note API Endpoints
+
+| HTTP   | URL        | CRUD Operation | CRUD Description                 | View Name | User Story |
+| ------ | ---------- | -------------- | -------------------------------- | --------- | ---------- |
+| GET    | /dashboard | read           | view list of notes on dashboard  | LIST      | #24        |
+| GET    | /notes     | read           | view list of notes on notes page | LIST      | #31, #66   |
+| GET    | /notes/:id | read           | view note detail by id           | DETAIL    | #65        |
+| POST   | /notes      | create         | create a new note                | LIST      | #28, #64   |
+| PUT    | /notes/:id | update         | edit a note by id                | DETAIL    | #67, #71   |
+| DELETE | /notes/:id | delete         | delete a note by id              | DETAIL    | #68        |
+
+
+Tables were converted to markdown syntax using [tabletomarkdown](https://tabletomarkdown.com/). The tables can also be viewed [here](https://docs.google.com/spreadsheets/d/1CRyoUpEjVBolPIXQgQctQdQ-qx7E5KorJemjMhpCZus/edit?usp=sharing) on Google Sheets.
