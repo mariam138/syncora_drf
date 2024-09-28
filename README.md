@@ -92,3 +92,21 @@ Once the user stories were created, they were then mapped out to different API e
 
 
 Tables were converted to markdown syntax using [tabletomarkdown](https://tabletomarkdown.com/). The tables can also be viewed [here](https://docs.google.com/spreadsheets/d/1CRyoUpEjVBolPIXQgQctQdQ-qx7E5KorJemjMhpCZus/edit?usp=sharing) on Google Sheets.
+
+## Frameworks, libraries and dependencies
+
+The **Syncora** API is created with Python using Django and the Django REST Framework. The following additional dependencies were also used in creating the API:
+
+## Testing
+
+### Manual Testing
+
+### Automated Testing
+
+### Python Validation
+
+## Bugs
+
+## Deployment
+
+## Credits
