@@ -17,3 +17,8 @@ Syncora is a web application that is the virtual version of a personal planner o
 3. Provide a simple and easy to use interface, making it intuitive for anyone over the age of 13 to use.
 
 4. Offer minimal but impactful features in an achievable development time, with the ability to further improve the app with more useful features in the future.
+
+## Planning
+
+Firstly, user stories were created for the frontend in order to map out which features were to be included in the project. These user stories were created based around the project goals outlined above. User stories were recorded using Github's issues and project features - the **Syncora** project board can be found [here](https://github.com/users/mariam138/projects/7).
+
