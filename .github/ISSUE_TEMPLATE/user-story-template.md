@@ -2,7 +2,7 @@
 name: User story template
 about: User story template for the back end repo.
 title: 'USER STORY:'
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
