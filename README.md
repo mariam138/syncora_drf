@@ -95,7 +95,7 @@ Tables were converted to markdown syntax using [tabletomarkdown](https://tableto
 
 ## Frameworks, libraries and dependencies
 
-The **Syncora** API is created with Python using Django and the Django REST Framework. The following additional dependencies were also used in creating the API:
+The **Syncora** API is created with Python using Django 5.0 and the Django REST Framework. The following additional dependencies were also used in creating the API:
 
 ## Testing
 
