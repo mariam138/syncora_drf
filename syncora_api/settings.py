@@ -129,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Cloudinary
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+MEDIA_URL = '/media/'
+# Allows for image storage in cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
