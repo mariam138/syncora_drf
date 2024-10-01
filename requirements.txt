@@ -3,4 +3,5 @@ cloudinary==1.41.0
 Django==5.0
 django-cloudinary-storage==0.3.0
 djangorestframework==3.15.2
+pillow==10.4.0
 sqlparse==0.5.1
