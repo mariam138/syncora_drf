@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # cloudinary storage underneath static files as we are only using it for media
+    'cloudinary_storage',
+    'cloudinary',
     # DRF framework to create API
     'rest_framework',
 ]
