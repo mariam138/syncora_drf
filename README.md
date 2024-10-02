@@ -107,6 +107,8 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 
 ### Manual Testing
 
+Manual testing took place throughout development of the app, for both front-end and back-end.
+
 ### Automated Testing
 
 ### Python Validation
