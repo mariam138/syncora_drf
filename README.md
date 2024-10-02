@@ -114,3 +114,7 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 ## Deployment
 
 ## Credits
+
+### Media
+
+- Default avatar icon is by [Dixit Lakhani_02](https://www.freepik.com/icon/user_8407889#fromView=search&page=1&position=29&uuid=d6bcc367-7dd9-404e-b466-6f8daca02ae7) on freepik.com
