@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "cloudinary",
     # DRF framework to create API
     "rest_framework",
+    # Custom apps
+    "profiles",
 ]
 
 MIDDLEWARE = [
