@@ -100,6 +100,8 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 - **Cloudinary 1.41.0** - To allow storage of profile pictures when users upload a new one
 - **django-cloudinary-storage 0.3.0** - To allow integration of storage with the Django framework
 - **Pillow 10.4** - For use with Django's ImageField, as recommended by the django-cloudinary-storage docs
+- **dj-database-url** - To connect to my extgernal postgreSQL database using a URL
+- **psycopg2** - Used as a PostgreSQL database adapter when connecting to the external database
 
 ## Testing
 
