@@ -12,7 +12,7 @@ class Profile(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     profile_image = models.ImageField(
-        upload_to='images/syncora-profile-images/', default='avatar-default_lxccrh'
+        upload_to='images/syncora-profile-images/', default='../avatar-default_lxccrh'
     )
 
     class Meta:
