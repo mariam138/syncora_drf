@@ -31,9 +31,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mariam138-syncoradrf-2w8pz189o83.ws.codeinstitute-ide.net'
+    '8000-mariam138-syncoradrf-2w8pz189o83.ws.codeinstitute-ide.net',
+    'localhost'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Application definition
 
