@@ -21,5 +21,5 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     single instance and also allows deletion of the single instance.
     """
 
-    profile_detail = Profile.objects.all()
+    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
