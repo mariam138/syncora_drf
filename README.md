@@ -117,6 +117,16 @@ Manual testing took place throughout development of the app, for both front-end 
 
 ## Deployment
 
+The following steps were followed in order to deploy the API onto Heroku:
+
+1. From the Heroku dashboard, click **'New*'* and then select *'Create new app'*
+2. Enter an app name (In this case, *syncora-api*) and choose a region. For this app, *Europe* was chosen as the region.
+3. Click the **Create app** button at the bottom of the page
+4. On the app, access the **Deploy** tab. Choose **GitHub** as the deployment method to connect to your GitHub account.
+5. Connect to the repository to connect the app through GitHub.
+6. Access the **Settings** tab. Click **Reveal Config Vars** to create your own environment variables.
+7. Set up variables for your *Cloudinary* API, your database and your secret key. 
+
 ## Credits
 
 ### Media
