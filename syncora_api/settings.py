@@ -66,6 +66,9 @@ INSTALLED_APPS = [
     "profiles",
 ]
 
+# For use with django all-auth for registration functionality
+SITE_ID = 1
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
