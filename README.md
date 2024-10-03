@@ -126,3 +126,5 @@ Manual testing took place throughout development of the app, for both front-end 
 ### Code
 
 - Code for signals to create a Profile instance whenever a user registers is adapted from [this post](https://dev.to/earthcomfy/django-user-profile-3hik) by Hana Belay on **dev.to**
+- Code to create the **`IsOwnerOrReadOnly`** custom permission class is adapted from the Django REST framework documentation [here](https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/#object-level-permissions)
+- Code to check if the currently logged in user is the owner of the profile is adapted from **Code Institute**'s 'Authentication, authorization and serializer method fields' video in the Django REST Framework module
