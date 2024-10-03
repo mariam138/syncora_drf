@@ -54,8 +54,14 @@ INSTALLED_APPS = [
     "cloudinary",
     # DRF framework to create API
     "rest_framework",
-    'rest_framework.authtoken',
-    'dj_rest_auth',
+    "rest_framework.authtoken",
+    "dj_rest_auth",
+    # Apps for registration
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "dj_rest_auth.registration",
     # Custom apps
     "profiles",
 ]
