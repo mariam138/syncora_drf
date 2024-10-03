@@ -27,6 +27,3 @@ class ProfileSerializer(serializers.ModelSerializer):
             "profile_image",
         ]
 
-
-class ProfileDetailSerializer(ProfileSerializer):
-    name = serializers.CharField(max_length=30)
