@@ -7,4 +7,5 @@ from .serializers import ProfileSerializer
 
 class ProfileList(generics.ListAPIView):
     queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+    # many=True indicates many profiles will be serialised
+    serializer_class = ProfileSerializer(queryset, many=True)
