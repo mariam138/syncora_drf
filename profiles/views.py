@@ -13,3 +13,13 @@ class ProfileList(generics.ListAPIView):
 
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+
+class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Can retrieve a single instance of the Profile model, allow editing of the
+    single instance and also allows deletion of the single instance.
+    """
+
+    profile_detail = Profile.objects.all()
+    serializer_class = ProfileSerializer
