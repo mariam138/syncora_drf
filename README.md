@@ -102,6 +102,7 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 - **Pillow 10.4** - For use with Django's ImageField, as recommended by the django-cloudinary-storage docs
 - **dj-database-url** - To connect to my extgernal postgreSQL database using a URL
 - **psycopg2** - Used as a PostgreSQL database adapter when connecting to the external database
+- **dj-rest-auth** - For use in providing REST API endpoints for user registration and authentication
 
 ## Testing
 
