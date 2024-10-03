@@ -14,6 +14,15 @@ class ProfileSerializer(serializers.ModelSerializer):
     username = serializers.ReadOnlyField(source="user.username")
     name = serializers.ReadOnlyField(source="user.first_name")
     email = serializers.ReadOnlyField(source="user.email")
+    is_owner = serializers.SerializerMethodField()
+
+    def get_is_owner(self, obj):
+        # Checks to see if the currently logged in user is the owner of the object
+        # Can be useful later on in the front-end for certain UI aspects
+        # Code adapted from Code Institute's 'Authentication, authorization and serializer
+        # method fields' video in the Django REST framework module
+        request = self.context['request']
+        return request.user == obj.user
 
     class Meta:
         model = Profile
@@ -25,5 +34,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             "created_on",
             "updated_on",
             "profile_image",
+            'is_owner'
         ]
 
