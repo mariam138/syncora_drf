@@ -184,7 +184,11 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 # REST framework settings
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": [
-        "rest_framework.renderers.JSONRenderer",
+        (
+            "rest_framework.renderers.BrowsableAPIRenderer"
+            if "DEV" in os.environ
+            else "rest_framework.renderers.JSONRenderer"
+        ),
     ],
     # Use sessions auth during development but use JWT in production
     "DEFAULT_AUTHENTICATION_CLASSES": [
