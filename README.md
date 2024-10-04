@@ -131,6 +131,9 @@ The following steps were followed in order to deploy the API onto Heroku:
 5. Connect to the repository to connect the app through GitHub.
 6. Access the **Settings** tab. Click **Reveal Config Vars** to create your own environment variables.
 7. Set up variables for your *Cloudinary* API, your database and your secret key. 
+8. Ensure all code is pushed to GitHub before deployment.
+9. Going back to the **Deploy** tab, scroll to the bottom to the *'Deploy a GitHub branch* setting.
+10. Click **Deploy Branch** ensuring the branch is set to *main*.
 
 ## Credits
 
