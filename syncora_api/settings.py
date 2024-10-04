@@ -200,7 +200,8 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE': 'syncora-auth',
     'JWT_AUTH_REFRESH_COOKIE': 'syncora-refresh-token',
     # Cookies will only be sent through https
-    'JWT_AUTH_SECURE': True
+    'JWT_AUTH_SECURE': True,
+    'JWT_AUTH_SAMESITE': 'None'
 }
 
 # Use custom registration serialiser
