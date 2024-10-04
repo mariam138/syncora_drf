@@ -12,12 +12,8 @@ class CustomRegisterSerializer(RegisterSerializer):
     """
     first_name = serializers.CharField()
 
-    def get_cleaned_data(self):
-        super(CustomRegisterSerializer, self).get_cleaned_data()
-        return {
-            "username": self.validated_data.get("username", ""),
-            "first_name": self.validated_data.get("first_name", ""),
-            "email": self.validated_data.get("email", ""),
-            "password1": self.validated_data.get("password1", ""),
-            "password2": self.validated_data.get("password2", ""),
-        }
+    def save(self,request):
+        user = super().save(request)
+        user.first_name = self.validated_data.get('first_name')
+        user.save()
+        return user
