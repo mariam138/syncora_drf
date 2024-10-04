@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # Custom apps
     "profiles",
+    "tasks",
 ]
 
 # For use with django all-auth for registration functionality
