@@ -178,3 +178,8 @@ REST_AUTH = {
     # Cookies will only be sent through https
     'JWT_AUTH_SECURE': True
 }
+
+# Use custom registration serialiser
+REST_AUTH_REGISTER_SERIALIZERS = {
+    "REGISTER_SERIALIZER": "syncora_api.serializers.CustomRegisterSerializer"
+}
