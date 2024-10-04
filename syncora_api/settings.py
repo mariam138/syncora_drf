@@ -31,8 +31,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mariam138-syncoradrf-2w8pz189o83.ws.codeinstitute-ide.net',
-    'localhost'
+    "8000-mariam138-syncoradrf-2w8pz189o83.ws.codeinstitute-ide.net",
+    "localhost",
+    "syncora-api-ecc74194384c.herokuapp.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
