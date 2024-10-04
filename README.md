@@ -136,6 +136,17 @@ The following steps were followed in order to deploy the API onto Heroku:
 10. Going back to the **Deploy** tab, scroll to the bottom to the *'Deploy a GitHub branch* setting.
 11. Click **Deploy Branch** ensuring the branch is set to *main*.
 
+### Fork repository
+
+To work on this repository independently without affecting the original source code, the repo can be forked.
+
+1. Open the repository to view its details.
+2. Click the arrow on the **Fork** button to show a dropdown menu.
+3. From the dropdown menu, click **Create a new fork**
+4. Rename the repository if you wish to do so.
+5. Ensure that the checkbox is ticked to copy the main branch only.
+6. Click **Create fork**.
+
 ## Credits
 
 ### Media
