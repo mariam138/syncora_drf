@@ -1,6 +1,6 @@
 # Manual Testing Tables
 
-All tables for manual testing are found in this file. Separate tables were created for each model and it's API endpoints. 
+All tables for manual testing are found in this file. Separate tables were created for each model and it's API endpoints. Tables were converted to markdown using [tabletomarkdown](tabletomarkdown.com).
 
 ## Profile API
 
