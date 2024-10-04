@@ -12,7 +12,9 @@ client = Client()
 # Create your tests here.
 
 class GetAllUsersTest(TestCase):
-    """ get list of all profiles in API"""
+    """get list of all profiles in API.
+    Code adapted from:https://realpython.com/test-driven-development-of-a-django-restful-api/#routes-and-testing-tdd
+    """
 
     def setUp(self):
         self.request_user = User.objects.create_user(
