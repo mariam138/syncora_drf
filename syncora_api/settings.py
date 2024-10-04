@@ -172,4 +172,8 @@ REST_FRAMEWORK = {
 # REST auth settings
 REST_AUTH = {
     "USE_JWT": True,
+    'JWT_AUTH_COOKIE': 'syncora-auth',
+    'JWT_AUTH_REFRESH_COOKIE': 'syncora-refresh-token',
+    # Cookies will only be sent through https
+    'JWT_AUTH_SECURE': True
 }
