@@ -13,3 +13,13 @@ class TaskList(generics.ListAPIView):
 
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+
+class CreateTask(generics.CreateAPIView):
+    """
+    Allows creation of a new task
+    """
+
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
