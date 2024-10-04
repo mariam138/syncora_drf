@@ -147,6 +147,17 @@ To work on this repository independently without affecting the original source c
 5. Ensure that the checkbox is ticked to copy the main branch only.
 6. Click **Create fork**.
 
+### Clone repository
+
+This repository can be cloned onto your own machine locally which will be synced with the repository on GitHub. This can be done to contribute directly.
+
+1. Open the repository to view its details.
+2. Click the green **<> Code** button to reveal a dropdown menu.
+3. A **Clone** tab will appear, giving three options to clone the repository:
+    a. Clone via **HTTPS** using the web URL
+    b. Clone via an **SSH** using the provided URL
+    c. Clone using the **GitHub CLI** with the provided command.
+
 ## Credits
 
 ### Media
