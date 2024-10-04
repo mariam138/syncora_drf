@@ -28,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Debug is true in development but false in production
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     "8000-mariam138-syncoradrf-2w8pz189o83.ws.codeinstitute-ide.net",
