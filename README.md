@@ -112,7 +112,9 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 
 ### Manual Testing
 
-Manual testing took place throughout development of the app, for both front-end and back-end.
+Manual testing took place throughout development of the app, for both front-end and back-end. This section will focus on testing for the back-end API.
+
+Testing tables were created using **Google Sheets**. Each row containted the feature being tested, the expected outcome, whether the test passed or failed and an extra notes column for further explanation. The tables have been converted to markdown format and can be found [here]().
 
 ### Automated Testing
 
