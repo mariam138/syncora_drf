@@ -3,7 +3,6 @@ from .models import Task
 
 class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="profile.user.username")
-    profile_id = serializers.ReadOnlyField(source="user.profile.id")
 
     class Meta:
         model = Task
