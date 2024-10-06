@@ -24,5 +24,9 @@ class CreateTask(generics.CreateAPIView):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    # def perform_create(self, serializer):
-    #     serializer.save(owner)
+    def perform_create(self, serializer):
+        # Get profile instance related to current user
+        # .profile provided by django w/ a lowercase name of the model
+        profile = self.request.user.profile
+        # use the profile instance to save the task
+        serializer.save(owner=profile)
