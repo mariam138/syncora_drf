@@ -24,5 +24,5 @@ class CreateTask(generics.CreateAPIView):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(owner)
