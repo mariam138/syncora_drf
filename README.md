@@ -105,8 +105,9 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 - **dj-rest-auth** - For use in providing REST API endpoints for user registration and authentication
 - **django-allauth** - Although not explicitly used in this API, it is used in conjunction with *dj-rest-auth* to include registration functionality, as suggested by the documentation.
 - **djangorestframework-simplejwt 5.3.1** - To allow use of JSON web tokens in the production version of the API
-- **django-cors-headers 4.4.0** - To add Cross-Origin Resource Sharing (CORS) headers to responses, allowing in-browser requests from other origings
+- **django-cors-headers 4.4.0** - To add Cross-Origin Resource Sharing (CORS) headers to responses, allowing in-browser requests from other origins
 - **gunicorn 23.0.0** - For use with serving the API on a web framework
+- **django-location-field 2.7.3** - This is used to allow user's to use an interactive map when inputting a location for events
 
 ## Testing
 
