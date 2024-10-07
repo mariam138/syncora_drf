@@ -68,3 +68,20 @@ class TaskSerializer(ConfigurableModelSerializer):
             "is_overdue",
             "completed",
         ]
+
+class CreateTaskSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source="owner.user.username")
+    completed = serializers.ReadOnlyField(source="task.completed")
+
+    class Meta:
+        model = Task
+        fields = [
+            "id",
+            "owner",
+            "title",
+            "due_date",
+            "priority",
+            "category",
+            "description",
+            "completed",
+        ]
