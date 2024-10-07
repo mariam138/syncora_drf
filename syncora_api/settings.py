@@ -219,3 +219,9 @@ REST_AUTH = {
 REST_AUTH_REGISTER_SERIALIZERS = {
     "REGISTER_SERIALIZER": "syncora_api.serializers.CustomRegisterSerializer"
 }
+
+# django-location-field settings
+LOCATION_FIELD = {
+    "map.provider": "openstreetmap",
+    "provider.openstreetmap.max_zoom": 18,
+}
