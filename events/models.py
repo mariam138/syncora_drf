@@ -20,7 +20,7 @@ class Event(models.Model):
     """
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length=250, unique=True)
-    date = models.DateField(widget=DateInput)
+    date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
     category = models.CharField(max_length=30, choices = CATEGORY_CHOICES)
