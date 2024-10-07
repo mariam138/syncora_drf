@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .models import Profile
 from .serializers import ProfileSerializer
-from syncora_api.permissions import IsOwnerOrReadOnly
+from syncora_api.permissions import IsUserOrReadOnly
 
 # Create your views here.
 
@@ -24,4 +24,4 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsUserOrReadOnly]
