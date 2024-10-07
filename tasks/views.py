@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Task
-from .serializers import TaskSerializer
+from .serializers import TaskSerializer, CreateTaskSerializer
 from syncora_api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
@@ -21,7 +21,7 @@ class CreateTask(generics.CreateAPIView):
     """
 
     queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+    serializer_class = CreateTaskSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
