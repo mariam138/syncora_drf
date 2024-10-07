@@ -2,7 +2,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer, CreateTaskSerializer
-from syncora_api.permissions import IsUserOrReadOnly
+from syncora_api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
@@ -41,4 +41,4 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    # permission_classes = 
+    permission_classes = [IsOwnerOrReadOnly]
