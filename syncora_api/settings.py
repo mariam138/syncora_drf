@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     # Custom apps
     "profiles",
     "tasks",
+    "events",
 ]
 
 # For use with django all-auth for registration functionality
