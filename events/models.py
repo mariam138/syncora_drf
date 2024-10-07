@@ -26,3 +26,9 @@ class Event(models.Model):
     category = models.CharField(max_length=30, choices = CATEGORY_CHOICES)
     location = PlainLocationField(based_fields=['city'], zoom=7)
     notes = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ["date"]
+    
+    def __str__(self):
+        return f"{self.name} | {self.date}"
