@@ -30,3 +30,15 @@ class CreateTask(generics.CreateAPIView):
         profile = self.request.user.profile
         # use the profile instance to save the task
         serializer.save(owner=profile)
+
+
+class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Will retrieve a task by id and allow it to be viewed in detail.
+    Will also allow editing and deletion of the task from one API
+    end point.
+    """
+
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    permission_classes = [IsOwnerOrReadOnly]
