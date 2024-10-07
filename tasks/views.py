@@ -32,7 +32,7 @@ class TaskList(generics.ListAPIView):
     serializer_class = TaskSerializer
 
 
-class CreateTask(TimezoneMixin, generics.CreateAPIView):
+class CreateTask(generics.CreateAPIView):
     """
     Allows creation of a new task
     """
