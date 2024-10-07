@@ -10,10 +10,10 @@ class TimezoneMixin:
     def initial(self, request, *args, **kwargs):
         super().initial(request, *args, **kwargs)
 
-        tzname = request.user.time_zone if request.user.is_authenticated else None
+        tzname = request.user.timezone if request.user.is_authenticated else None
         # if request.user.is_authenticated:
         #     tzname = request.user.timezone
-        #     # print('Mixin', tzname)
+        print('Mixin', tzname)
         if tzname:
             timezone.activate(zoneinfo.ZoneInfo(tzname))
         else:
