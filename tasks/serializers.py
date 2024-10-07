@@ -27,7 +27,7 @@ class TimezoneMixin:
 
 class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.user.username")
-    # is_overdue = serializers.SerializerMethodField()
+    is_overdue = serializers.ReadOnlyField()
 
     # def get_is_overdue(self, obj):
     #     # current_datetime = datetime.datetime.now()
@@ -65,7 +65,7 @@ class TaskSerializer(serializers.ModelSerializer):
             "priority",
             "category",
             "description",
-            # "is_overdue",
+            "is_overdue",
             "completed",
         ]
 
@@ -75,8 +75,11 @@ class CreateTaskSerializer(serializers.ModelSerializer):
     is_overdue = serializers.SerializerMethodField()
 
     def get_is_overdue(self, obj):
-       
-       self.is_overdue = False
+        self.is_overdue = False
+
+        now = timezone.now()
+        if now > obj.due_date:
+            self.is_overdue = True
 
     class Meta:
         model = Task
