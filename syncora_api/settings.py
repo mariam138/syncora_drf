@@ -64,7 +64,9 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "dj_rest_auth.registration",
-    'corsheaders',
+    "corsheaders",
+    # django location field
+    "location_field.apps.DefaultConfig",
     # Custom apps
     "profiles",
     "tasks",
