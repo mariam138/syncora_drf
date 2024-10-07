@@ -6,8 +6,6 @@ from rest_framework import serializers
 from .models import Task
 
 
-
-
 # class ConfigurableModelSerializer(TimezoneMixin, serializers.ModelSerializer):
 #     def __init__(self, *args, **kwargs):
 #         super(ConfigurableModelSerializer, self).__init__(*args, **kwargs)
@@ -15,7 +13,7 @@ from .models import Task
 
 class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.user.username")
-    is_overdue = serializers.ReadOnlyField()
+    is_overdue = serializers.SerializerMethodField()
 
     # def get_is_overdue(self, obj):
     #     # current_datetime = datetime.datetime.now()
@@ -37,12 +35,17 @@ class TaskSerializer(serializers.ModelSerializer):
     #     # print(is_now_aware)
     #     # print('utc now', now_1)
     #     print("Due date:", due_date)
-        # print(tz)
-        # print(current_datetime)
+    # print(tz)
+    # print(current_datetime)
 
-        # if current_datetime > obj.due_date:
-        #     obj.is_overdue = True
+    # if current_datetime > obj.due_date:
+    #     obj.is_overdue = True
 
+    def get_is_overdue(self, obj):
+        # self.is_overdue = False
+
+        now = timezone.localtime(timezone.now())
+        print (now)
     class Meta:
         model = Task
         fields = [
@@ -60,14 +63,7 @@ class TaskSerializer(serializers.ModelSerializer):
 class CreateTaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.user.username")
     completed = serializers.ReadOnlyField(source="task.completed")
-    is_overdue = serializers.SerializerMethodField()
 
-    def get_is_overdue(self, obj):
-        self.is_overdue = False
-
-        now = timezone.now()
-        if now > obj.due_date:
-            self.is_overdue = True
 
     class Meta:
         model = Task
@@ -79,6 +75,5 @@ class CreateTaskSerializer(serializers.ModelSerializer):
             "priority",
             "category",
             "description",
-            'is_overdue',
             "completed",
         ]

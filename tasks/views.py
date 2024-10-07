@@ -32,7 +32,7 @@ class TaskList(generics.ListAPIView):
     serializer_class = TaskSerializer
 
 
-class CreateTask(generics.CreateAPIView):
+class CreateTask(TimezoneMixin, generics.CreateAPIView):
     """
     Allows creation of a new task
     """
@@ -49,7 +49,7 @@ class CreateTask(generics.CreateAPIView):
         serializer.save(owner=profile)
 
 
-class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+class TaskDetail(TimezoneMixin, generics.RetrieveUpdateDestroyAPIView):
     """
     Will retrieve a task by id and allow it to be viewed in detail.
     Will also allow editing and deletion of the task from one API
