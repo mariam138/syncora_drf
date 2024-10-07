@@ -122,6 +122,12 @@ Testing tables were created using **Google Sheets**. Each row containted the fea
 
 ## Bugs
 
+1. The first bug I came across was during the creation of my Task serialisers. I wanted to implement an `is_overdue` serialiser method field. I hoped to do this by comparing the current datetime to the due date set in the task. The first error I came across was this type error:
+
+    > TypeError: can't compare offset-naive and offset-aware datetimes
+
+    After searching around, I was able to fix this error. However, then I was struggling to compare the current datetime and the duedate. The due date would be saved in my current time zone, but using print statements to debug, the current datetime was only printing in UTC. I tried several solutions, including creating a custom Mixin and implementing it into the serialiser and the view, but unfortunately this did not work. In the end I decided to remove this feature from the backend and will implement it in the frontend, using the timezone of the user's browser for comparison. Another solution would be to add a **timezone** field to the **Profile** model, then localising the current datetime to this timezone. Whether this would conflict with Django's timezone settings is unclear however.
+
 ## Deployment
 
 The following steps were followed in order to deploy the API onto Heroku:
