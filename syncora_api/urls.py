@@ -24,6 +24,7 @@ urlpatterns = [
     path("", include("profiles.urls")),
     path("", include("tasks.urls")),
     path("", include("events.urls")),
+    path("", include("notes.urls")),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path("dj-rest-auth/", include("dj_rest_auth.urls")),
