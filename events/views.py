@@ -13,3 +13,17 @@ class EventList(generics.ListAPIView):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+
+
+class CreateEvent(generics.CreateAPIView):
+    """
+    Allows user to create new event instance.
+    """
+
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        profile = self.request.user.profile
+        serializer.save(owner=profile)
