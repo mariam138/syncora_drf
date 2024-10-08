@@ -35,3 +35,9 @@ class CreateNoteViewTests(APITestCase):
         response = self.client.post('/notes/new/', {'content': 'content'})
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+    def test_unauthenticated_user_cannot_create_note(self):
+        """Tests if an unauthorised user is unable to create a new note"""
+        response = self.client.post('/notes/new/', {'title': 'title', 'content':'content'})
+
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
