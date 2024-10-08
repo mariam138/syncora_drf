@@ -4,6 +4,7 @@ from .models import Note
 
 class NoteSerializer(serializers.ModelSerializer):
     """Serialises instances of the Note model"""
+
     owner = serializers.ReadOnlyField(source="owner.user.username")
 
     class Meta:
