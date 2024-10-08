@@ -46,49 +46,46 @@ The final custom model for the app is the **Note** model. Same as the *Task* and
 
 ## API Endpoints
 
-Once the user stories were created, they were then mapped out to different API endpoints and their url's. This was to help with planning which HTTP methods and views would be needed. Below is a table of all the API endpoints and which user stories they relate to.
+Once the user stories were created, they were then mapped out to different API endpoints and their url's. This was to help with planning which HTTP methods and views would be needed. Below is a table of all the API endpoints and which user stories they relate to. Each api endpoint also has the needed permissions which was used during creation of each endpoint.
 
 ### Profile API Endpoints
 
-| HTTP   | URL          | CRUD Operation | CRUD Description       | View Name | User Story    |
-| ------ | ------------ | -------------- | ---------------------- | --------- | ------------- |
-| GET    | /profile/:id | read           | retrieve profile by id | DETAIL    | #36           |
-| PUT    | /profile/:id | update         | edit profile by id     | DETAIL    | #35, #37      |
-| DELETE | /profile/:id | delete         | delete profile by id   | DETAIL    | #19, #20, #21 |
+| HTTP   | URL           | CRUD Operation | CRUD Description          | View Name | User Story    | Permissions      | Notes                                                                                                                                                                        |
+| ------ | ------------- | -------------- | ------------------------- | --------- | ------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | /profiles     | read           | retrieve list of profiles | LIST      | \-            | Read only        | For testing purposes only                                                                                                                                                    |
+| GET    | /profiles/:id | read           | retrieve profile by id    | DETAIL    | #36           | Read only        | Although initially I wanted to make these visible only to the owner, this will be handy for future features that allow users to follow others or invite them to events, etc. |
+| PUT    | /profiles/:id | update         | edit profile by id        | DETAIL    | #35, #37      | IsUserOrReadOnly |                                                                                                                                                                              |
+| DELETE | /profiles/:id | delete         | delete profile by id      | DETAIL    | #19, #20, #21 | IsUserOrReadOnly |
 
 ### Task API Endpoints
 
-|        |            |                |                                  |           |                    |
-| ------ | ---------- | -------------- | -------------------------------- | --------- | ------------------ |
-| HTTP   | URL        | CRUD Operation | CRUD Description                 | View Name | User Story         |
-| GET    | /dashboard | read           | view list of tasks on dashboard  | LIST      | #23                |
-| GET    | /tasks     | read           | view list of tasks on tasks page | LIST      | #30, #40           |
-| GET    | /tasks/:id | read           | view task detail by id           | DETAIL    | #39                |
-| POST   | /tasks     | create         | create a new task                | LIST      | #38, #44, #46, #27 |
-| PUT    | /tasks/:id | update         | edit or update a task by id      | DETAIL    | #41, #43           |
-| DELETE | /tasks/:id | delete         | delete a task by id              | DETAIL    | #42                |
+| HTTP   | URL        | CRUD Operation | CRUD Description                 | View Name | User Story         | Permissions       | Notes                                                 |
+| ------ | ---------- | -------------- | -------------------------------- | --------- | ------------------ | ----------------- | ----------------------------------------------------- |
+| GET    | /tasks     | read           | view list of tasks on tasks page | LIST      | #30, #40, #23      | ReadOnly          | This API endpoint will also be used for the dashboard |
+| GET    | /tasks/:id | read           | view task detail by id           | DETAIL    | #39                | ReadOnly          |                                                       |
+| POST   | /tasks/new | create         | create a new task                | LIST      | #38, #44, #46, #27 | IsOwnerOrReadOnly |                                                       |
+| PUT    | /tasks/:id | update         | edit or update a task by id      | DETAIL    | #41, #43           | IsOwnerOrReadOnly |                                                       |
+| DELETE | /tasks/:id | delete         | delete a task by id              | DETAIL    | #42                | IsOwnerOrReadOnly |
 
 ### Event API Endpoints
 
-| HTTP   | URL         | CRUD Operation | CRUD Description                   | View Name | User Story         |
-| ------ | ----------- | -------------- | ---------------------------------- | --------- | ------------------ |
-| GET    | /dashboard  | read           | view list of events on dashboard   | LIST      | #22                |
-| GET    | /events     | read           | view list of events on events page | LIST      | #29, #52           |
-| GET    | /events/:id | read           | view event detail by id            | DETAIL    | #51                |
-| POST   | /events     | create         | create a new event                 | LIST      | #50, #26, #55, #57 |
-| PUT    | /events/:id | update         | update an event by id              | DETAIL    | #53                |
-| DELETE | /events/:id | delete         | delete a task by id                | DETAIL    | #54                |
+| HTTP   | URL          | CRUD Operation | CRUD Description                   | View Name | User Story         | Permissions               | Notes                                    |
+| ------ | ------------ | -------------- | ---------------------------------- | --------- | ------------------ | ------------------------- | ---------------------------------------- |
+| GET    | /events      | read           | view list of events on events page | LIST      | #29, #52, #22      | ReadOnly                  | endpoint will also be used for dashboard |
+| GET    | /events/:id  | read           | view event detail by id            | DETAIL    | #51                | ReadOnly                  |                                          |
+| POST   | /events/new/ | create         | create a new event                 | LIST      | #50, #26, #55, #57 | IsAuthenticatedOrReadOnly |                                          |
+| PUT    | /events/:id  | update         | update an event by id              | DETAIL    | #53                | IsOwnerOrReadOnly         |                                          |
+| DELETE | /events/:id  | delete         | delete a task by id                | DETAIL    | #54                | IsOwnerOrReadOnly         |
 
 ### Note API Endpoints
 
-| HTTP   | URL        | CRUD Operation | CRUD Description                 | View Name | User Story |
-| ------ | ---------- | -------------- | -------------------------------- | --------- | ---------- |
-| GET    | /dashboard | read           | view list of notes on dashboard  | LIST      | #24        |
-| GET    | /notes     | read           | view list of notes on notes page | LIST      | #31, #66   |
-| GET    | /notes/:id | read           | view note detail by id           | DETAIL    | #65        |
-| POST   | /notes      | create         | create a new note                | LIST      | #28, #64   |
-| PUT    | /notes/:id | update         | edit a note by id                | DETAIL    | #67, #71   |
-| DELETE | /notes/:id | delete         | delete a note by id              | DETAIL    | #68        |
+| HTTP   | URL         | CRUD Operation | CRUD Description                 | View Name | User Story    | Permissions               | Notes                                    |
+| ------ | ----------- | -------------- | -------------------------------- | --------- | ------------- | ------------------------- | ---------------------------------------- |
+| GET    | /notes      | read           | view list of notes on notes page | LIST      | #31, #66, #24 | ReadOnly                  | endpoint will also be used for dashboard |
+| GET    | /notes/:id  | read           | view note detail by id           | DETAIL    | #65           | AllowAll                  |                                          |
+| POST   | /notes/new/ | create         | create a new note                | LIST      | #28, #64      | IsAuthenticatedOrReadOnly |                                          |
+| PUT    | /notes/:id  | update         | edit a note by id                | DETAIL    | #67, #71      | IsOwnerOrReadOnly         |                                          |
+| DELETE | /notes/:id  | delete         | delete a note by id              | DETAIL    | #68           | IsOwnerOrReadOnly         |
 
 
 Tables were converted to markdown syntax using [tabletomarkdown](https://tabletomarkdown.com/). The tables can also be viewed [here](https://docs.google.com/spreadsheets/d/1CRyoUpEjVBolPIXQgQctQdQ-qx7E5KorJemjMhpCZus/edit?usp=sharing) on Google Sheets.
