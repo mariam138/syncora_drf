@@ -20,3 +20,8 @@ class CreateNote(generics.CreateAPIView):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        """Make logged in user owner of the note"""
+        profile = self.request.user.profile
+        serializer.save(owner=profile)
