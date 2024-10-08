@@ -34,3 +34,15 @@ All tables for manual testing are found in this file. Separate tables were creat
 | View event detail by id   | Any user can view an event detail by id.                                                                   | Pass      |       |
 | Update event detail by id | If the user is the owner, the event can be updated. If not the owner, this functionality is not available. | Pass      |       |
 | Delete event detail by id | If the user is the owner, the event can be deleted. If not the owner, this functionality is not available. | Pass      |
+
+## Note API
+
+| Tested Feature           | Expected Outcome                                                                       | Pass/Fail | Notes |
+| ------------------------ | -------------------------------------------------------------------------------------- | --------- | ----- |
+| View list of notes       | At the notes/ endpoint, a list of notes can be seen                                    | Pass      |       |
+| Create a new note        | At notes/new/, the user is able to create a note if authenticated.                     | Pass      |       |
+| Create a new note        | If unauthorised, the option to create a note is not available.                         | Pass      |       |
+| View note detail by id   | Authroised and unauthorised users are able to view a note's detail by id               | Pass      |       |
+| Update note by id        | If the owner of the note, the note can then be updated                                 | Pass      |       |
+| Delete note by id        | If owner of the note, then the note can be deleted                                     | Pass      |       |
+| Update/delete note by id | If not the owner or an unauthorised user, then these functionalities are not available | Pass      |
