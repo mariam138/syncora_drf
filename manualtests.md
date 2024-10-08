@@ -24,3 +24,13 @@ All tables for manual testing are found in this file. Separate tables were creat
 | Edit task by id               | If I am the owner of the task, I am able to update my task.                                                           | Pass      |                                                                                                                                 |
 | View task by id               | I am able to view the task's detail by id, regardless of whether I am the owner or not                                | Pass      | This feature could be handy if a 'followers' model or similar is brought in to allow others to view the task a user has created |
 | Delete task by id             | If I am the owner of the task, I am able to delete the task                                                           | Pass      |
+
+## Event API
+
+| Tested Feature            | Expected Outcome                                                                                           | Pass/Fail | Notes |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | ----- |
+| View list of events       | At /events/ endpoint, a list of events can be seen                                                         | Pass      |       |
+| Create a new event        | When logged in, a new event is able to be created. This should not be accessible to unauthenticated users. | Pass      |       |
+| View event detail by id   | Any user can view an event detail by id.                                                                   | Pass      |       |
+| Update event detail by id | If the user is the owner, the event can be updated. If not the owner, this functionality is not available. | Pass      |       |
+| Delete event detail by id | If the user is the owner, the event can be deleted. If not the owner, this functionality is not available. | Pass      |
