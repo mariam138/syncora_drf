@@ -27,3 +27,14 @@ class CreateEvent(generics.CreateAPIView):
     def perform_create(self, serializer):
         profile = self.request.user.profile
         serializer.save(owner=profile)
+    
+
+class EventDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieves an event using it's id. Can also allow the user to update
+    and delete the event by using it's id.
+    """
+
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    permission_classes = [IsOwnerOrReadOnly]
