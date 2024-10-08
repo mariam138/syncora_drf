@@ -12,3 +12,11 @@ class NoteList(generics.ListAPIView):
 
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
+
+
+class CreateNote(generics.CreateAPIView):
+    """Allows user to create a new note if authorised."""
+
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
