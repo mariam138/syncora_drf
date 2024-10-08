@@ -4,6 +4,8 @@ from .models import Note
 from .serializers import NoteSerializer
 from syncora_api.permissions import IsOwnerOrReadOnly
 
+from notes import serializers
+
 # Create your views here.
 class NoteList(generics.ListAPIView):
     """
@@ -25,3 +27,12 @@ class CreateNote(generics.CreateAPIView):
         """Make logged in user owner of the note"""
         profile = self.request.user.profile
         serializer.save(owner=profile)
+    
+
+class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
+    """Allow owner of the note to update and/or delete their own note.
+    Otherwise, allows read-only access."""
+
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+    permission_classes = [IsOwnerOrReadOnly]
