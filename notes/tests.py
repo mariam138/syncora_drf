@@ -76,3 +76,9 @@ class NoteDetailViewTests(APITestCase):
         self.client.login(username='mariam', password='pass')
         response = self.client.delete('/notes/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+    def test_user_cannot_delete_another_users_note(self):
+        """Test that a user cannot delete another user's note"""
+        self.client.login(username='fakemariam', password='pass')
+        response=self.client.delete('/notes/1/')
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
