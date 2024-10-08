@@ -21,4 +21,5 @@ class Note(models.Model):
         ordering = ["-date_updated"]
     
     def __str__(self):
-        return f"{self.title} | {self.content[:25]}"
+        """ Will show title if available and a preview of the content """
+        return f"{self.title} | {self.content[:25]}..."
