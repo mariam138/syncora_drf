@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     "profiles",
     "tasks",
     "events",
+    "notes",
 ]
 
 # For use with django all-auth for registration functionality
