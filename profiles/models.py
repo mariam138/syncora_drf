@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from notes import serializers
+
 # Create your models here.
 
 class Profile(models.Model):
