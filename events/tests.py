@@ -82,3 +82,17 @@ class EventDetailViewTests(APITestCase):
         )
 
         User.objects.create_user(username="fakemariam", password="pass")
+
+    def test_user_can_retreieve_event_detail(self):
+        response = self.client.get('/events/1/')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_event_owner_can_update_event(self):
+        self.client.login(username='mariam', password='pass')
+
+        response = self.client.put('/events/1/', {
+            'location':'dubai'
+        })
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
