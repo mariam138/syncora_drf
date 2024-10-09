@@ -26,3 +26,10 @@ class EventListViewTests(APITestCase):
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue('test event', response.content)
+
+
+class CreateEventViewTests(APITestCase):
+
+    def setUp(self):
+        User.objects.create_user(username="mariam", password="pass")
+        mariam = Profile.objects.get(id=1)
