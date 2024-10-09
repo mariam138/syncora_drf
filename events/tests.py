@@ -13,9 +13,16 @@ class EventListViewTests(APITestCase):
         Event.objects.create(
             owner=mariam,
             name="test event",
-            date="09/10/2024",
+            date="2024-10-09",
             start_time="00:00",
             end_time="00:01",
             category="WORK",
             location="london",
         )
+    
+    def test_view_list_of_events(self):
+        """Tests if a list of events can be retreived"""
+        response = self.client.get('/events/')
+        
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertTrue('test event', response.content)
