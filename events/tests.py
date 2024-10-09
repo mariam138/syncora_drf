@@ -64,3 +64,21 @@ class CreateEventViewTests(APITestCase):
             )
 
             self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+
+class EventDetailViewTests(APITestCase):
+    """Tests associated with the EventDetail view"""
+    def setUp(self):
+        User.objects.create_user(username="mariam", password="pass")
+        mariam = Profile.objects.get(id=1)
+        Event.objects.create(
+            owner=mariam,
+            name="test event",
+            date="2024-10-09",
+            start_time="00:00",
+            end_time="00:01",
+            category="WORK",
+            location="london",
+        )
+
+        User.objects.create_user(username="fakemariam", password="pass")
