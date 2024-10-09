@@ -1,8 +1,12 @@
-# Manual Testing Tables
+# Testing Tables
 
-All tables for manual testing are found in this file. Separate tables were created for each model and it's API endpoints. Tables were converted to markdown using [tabletomarkdown](tabletomarkdown.com).
+All tables for testing can be found here in this file. Tables for both manual and automated tests can be found here.
 
-## Profile API
+## Manual Tests
+
+Separate tables were created for each model and it's API endpoints. Tables were converted to markdown using [tabletomarkdown](tabletomarkdown.com).
+
+### Profile API
 
 | Tested Feature                        | Expected Outcome                                                                                                                                        | Pass/Fail | Notes                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,7 +18,7 @@ All tables for manual testing are found in this file. Separate tables were creat
 | Edit name on profile by id            | If you are the owner of the profile, you are able to update your name.                                                                                  | Fail      | Due to using dot notation to access the first_name field of the User model, this required creating my own update() method for the serialiser. Due to the more complicated nature and time constraints, I decided to remove the ability to edit a name for this project. However this is a feature that can be brought in in the future. |
 | Upload new profile picture            | If uploading an image larger than 2MB, a message appears telling the user it is too large and they must upload a smaller image.                         | Pass      |
 
-## Task API
+### Task API
 
 | Tested Feature                | Expected Outcome                                                                                                      | Pass/Fail | Notes                                                                                                                           |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -25,7 +29,7 @@ All tables for manual testing are found in this file. Separate tables were creat
 | View task by id               | I am able to view the task's detail by id, regardless of whether I am the owner or not                                | Pass      | This feature could be handy if a 'followers' model or similar is brought in to allow others to view the task a user has created |
 | Delete task by id             | If I am the owner of the task, I am able to delete the task                                                           | Pass      |
 
-## Event API
+### Event API
 
 | Tested Feature            | Expected Outcome                                                                                           | Pass/Fail | Notes |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | ----- |
@@ -35,7 +39,7 @@ All tables for manual testing are found in this file. Separate tables were creat
 | Update event detail by id | If the user is the owner, the event can be updated. If not the owner, this functionality is not available. | Pass      |       |
 | Delete event detail by id | If the user is the owner, the event can be deleted. If not the owner, this functionality is not available. | Pass      |
 
-## Note API
+### Note API
 
 | Tested Feature           | Expected Outcome                                                                       | Pass/Fail | Notes |
 | ------------------------ | -------------------------------------------------------------------------------------- | --------- | ----- |
