@@ -55,6 +55,14 @@ Separate tables were created for each model and it's API endpoints. Tables were 
 
 Separate tables were again made for each API end point. Automated tests were split into their classes and their tests. The result of each individual test is recorded in these tables.
 
+## Profile API Tests
+
+| Test Class             | Test Name                                      | Expected outcome                  | Pass/Fail |
+| ---------------------- | ---------------------------------------------- | --------------------------------- | --------- |
+| ProfileDetailViewTests | test_retrieve_profile_by_id                    | Get 200 OK response code          | Pass      |
+|                        | test_cannot_retrieve_profile_that_doesnt_exist | Do not get 200 OK response code   | Pass      |
+|                        |                                                | Get a 404 not found response code | Pass      |
+
 ### Events API Tests
 
 | Test Class           | Test Name                                      | Expected outcome                               | Pass/Fail                                                | Notes                                                                                                                                                                                                                                                      |
