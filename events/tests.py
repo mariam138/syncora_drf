@@ -134,3 +134,10 @@ class EventDetailViewTests(APITestCase):
         response = self.client.delete('/events/1/')
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+    def test_user_cannot_delete_another_users_event(self):
+        """Tests that a user cannot delete an event of another user"""
+        self.client.login(username='fakemariam', password='pass')
+        response = self.client.delete('/events/1/')
+
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
