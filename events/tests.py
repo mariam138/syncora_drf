@@ -84,15 +84,30 @@ class EventDetailViewTests(APITestCase):
         User.objects.create_user(username="fakemariam", password="pass")
 
     def test_user_can_retreieve_event_detail(self):
+        """Test that any user can retreieve an event's detail"""
         response = self.client.get('/events/1/')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
     
     def test_event_owner_can_update_event(self):
+        """Tests that the owner of an event can update it. Both
+        put and patch requests are tested."""
         self.client.login(username='mariam', password='pass')
 
-        response = self.client.put('/events/1/', {
+        response = self.client.patch('/events/1/', {
             'location':'dubai'
         })
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        response_2 = self.client.patch('/events/1/', {
+                    "name": "test event",
+                    "date": "2024-10-09",
+                    "start_time": "00:00",
+                    "end_time": "00:01",
+                    "category": "WORK",
+                    "location": "london",
+                    "notes": "a note"
+                })
+
+        self.assertEqual(response_2.status_code, status.HTTP_200_OK)
