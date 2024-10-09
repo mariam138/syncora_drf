@@ -50,3 +50,23 @@ Separate tables were created for each model and it's API endpoints. Tables were 
 | Update note by id        | If the owner of the note, the note can then be updated                                 | Pass      |       |
 | Delete note by id        | If owner of the note, then the note can be deleted                                     | Pass      |       |
 | Update/delete note by id | If not the owner or an unauthorised user, then these functionalities are not available | Pass      |
+
+## Automated Tests
+
+Separate tables were again made for each API end point. Automated tests were split into their classes and their tests. The result of each individual test is recorded in these tables.
+
+### Notes API Tests
+
+| Test Class          | Test Name                                    | Expected outcome                                 | Pass/Fail |
+| ------------------- | -------------------------------------------- | ------------------------------------------------ | --------- |
+| NoteListViewTests   | test_view_list_of_notes                      | Get a 200 response status                        | Pass      |
+|                     |                                              | True if test note title is in response.content   | Pass      |
+|                     |                                              | True if test note content is in response.content | Pass      |
+| CreateNoteViewTests | test_authenticated_user_can_create_note      | Get a 201 created response                       | Pass      |
+|                     | test_unauthenticated_user_cannot_create_note | Get a 403 forbidden response                     | Pass      |
+| NoteDetailViewTests | test_user_can_retreive_note_detail           | Get a 200 response status                        | Pass      |
+|                     | test_owner_can_update_own_note               | Get a 200 response status                        | Pass      |
+|                     | test_user_cannot_update_another_users_note   | Ensure 200 response status is not received       | Pass      |
+|                     |                                              | Get a 403 forbidden response                     | Pass      |
+|                     | test_user_can_delete_own_note                | Get a 204 no content response                    | Pass      |
+|                     | test_user_cannot_delete_another_users_note   | Get a 403 forbidden response                     | Pass      |
