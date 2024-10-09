@@ -68,7 +68,7 @@ class NoteDetailViewTests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test__user_cannot_update_another_users_note(self):
+    def test_user_cannot_update_another_users_note(self):
         """Tests that a user cannot update another user's notes"""
         self.client.login(username="fakemariam", password="pass")
         response = self.client.put("/notes/1/", {"content": "new fake content"})
