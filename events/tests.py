@@ -48,3 +48,19 @@ class CreateEventViewTests(APITestCase):
             })
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+        def test_unauthorised_user_cannot_create_new_event(self):
+            """Tests that a user cannot create a new event if not logged in"""
+            response = self.client.post(
+                "/events/new/",
+                {
+                    "name": "test event",
+                    "date": "2024-10-09",
+                    "start_time": "00:00",
+                    "end_time": "00:01",
+                    "category": "WORK",
+                    "location": "london",
+                },
+            )
+
+            self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
