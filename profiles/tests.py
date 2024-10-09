@@ -16,3 +16,10 @@ class ProfileDetailViewTests(APITestCase):
         User.objects.create_user(
             username="fakemariam", first_name="mariam", password="pass"
         )
+
+    def test_retreive_profile_by_id(self):
+        """Tests that a profile can be retrieved by id"""
+        response = self.client.get('/profiles/1')
+        print(response.content)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK) 
