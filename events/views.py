@@ -9,13 +9,15 @@ from syncora_api.permissions import IsOwnerOrReadOnly
 class EventList(generics.ListAPIView):
     """
     Displays list of events created. Events can be searched for
-    in the API by the event name.
+    in the API by the event name. Events can also be ordered by their
+    date in either ascending or descending order.
     """
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_backends = [filters.SearchFilter]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['name']
+    ordering_fields = ['date']
 
 
 class CreateEvent(generics.CreateAPIView):
