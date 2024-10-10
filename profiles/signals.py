@@ -8,7 +8,8 @@ from django.dispatch import receiver
 from .models import Profile
 
 
-# User model send signal to Profile model to create a profile instance from user instance
+# User model send signal to Profile model to create
+# a profile instance from user instance
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:

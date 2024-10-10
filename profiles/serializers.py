@@ -20,9 +20,11 @@ class ProfileSerializer(serializers.ModelSerializer):
     events_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
-        # Checks to see if the currently logged in user is the owner of the object
+        # Checks to see if the currently logged in user
+        # is the owner of the object
         # Can be useful later on in the front-end for certain UI aspects
-        # Code adapted from Code Institute's 'Authentication, authorization and serializer
+        # Code adapted from Code Institute's 'Authentication,
+        # authorization and serializer
         # method fields' video in the Django REST framework module
         request = self.context["request"]
         return request.user == obj.user
@@ -33,7 +35,8 @@ class ProfileSerializer(serializers.ModelSerializer):
         Framework module when creating the post serialiser."""
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
-                "Image cannot be larger than 2MB. Please choose a smaller image."
+                "Image cannot be larger than 2MB."
+                "Please choose a smaller image."
             )
 
     class Meta:
