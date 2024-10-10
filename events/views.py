@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, filters
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Event
@@ -15,9 +16,10 @@ class EventList(generics.ListAPIView):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter, DjangoFilterBackend]
     search_fields = ['name']
     ordering_fields = ['date']
+    filterset_fields = ['category', 'location']
 
 
 class CreateEvent(generics.CreateAPIView):

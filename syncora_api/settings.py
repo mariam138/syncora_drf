@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "corsheaders",
     # django location field
     "location_field.apps.DefaultConfig",
+    # django filters
+    "django_filters",
     # Custom apps
     "profiles",
     "tasks",
@@ -203,7 +205,7 @@ REST_FRAMEWORK = {
     # Pagination settings
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
-    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
+    # "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
 }
 
 if 'DEV' not in os.environ:
