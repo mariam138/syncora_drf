@@ -1,4 +1,5 @@
-from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import generics, filters
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Note
 from .serializers import NoteSerializer
@@ -13,6 +14,12 @@ class NoteList(generics.ListAPIView):
 
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
+    filter_backends = [
+        filters.SearchFilter,
+        filters.OrderingFilter,
+        DjangoFilterBackend
+    ]
+    search_fields = ["title", "content"]
 
 
 class CreateNote(generics.CreateAPIView):
