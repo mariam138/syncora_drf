@@ -21,6 +21,7 @@ class TaskList(generics.ListAPIView):
         DjangoFilterBackend,
     ]
     search_fields = ["title", "description"]
+    ordering_fields = ["due_date", "priority"]
 
 
 class CreateTask(generics.CreateAPIView):
