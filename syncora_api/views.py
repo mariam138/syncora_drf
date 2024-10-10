@@ -4,6 +4,4 @@ from rest_framework.response import Response
 
 @api_view()
 def home_route(request):
-    return Response({
-        "message": "Welcome to the Syncora API!"
-    })
+    return Response({"message": "Welcome to the Syncora API!"})
