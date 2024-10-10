@@ -121,6 +121,40 @@ Some automated testing was also completed for the API. Full automated testing wa
 
 ### Python Validation
 
+Each file was validated using the **Code Institute** [python linter](https://pep8ci.herokuapp.com). Below is a table with any comments about validation. The table was created in Google Sheets and converted to markdown format using [tabletomarkdown](tabletomarkdown.com).
+
+| App         | File           | Notes                                                                                                                                                                         |
+| ----------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| syncora_api | settings.py    | 4 errors appeared for lines being too long at lines: 151, 154, 157 and 160. These were due to django's password validators. As these cannot be changed, they were left as is. |
+|             | permissions.py | Shortened comment on line 1. Passes with no validation errors.                                                                                                                |
+|             | serializers.py | No validation errors                                                                                                                                                          |
+|             | urls.py        | Shortened lines 29 and 31. Passes with no validation errors.                                                                                                                  |
+|             | views.py       | Passes with no validation errors.                                                                                                                                             |
+| events      | admin.py       | Added new line at end of file. Passes with no validation errors.                                                                                                              |
+|             | models.py      | Passes with no validation errors.                                                                                                                                             |
+|             | serializers.py | Passes with no validation errors.                                                                                                                                             |
+|             | tests.py       | Passes with no validation errors.                                                                                                                                             |
+|             | urls.py        | Passes with no validation errors.                                                                                                                                             |
+|             | views.py       | Passes with no validation errors.                                                                                                                                             |
+| notes       | admin.py       | Passes with no validation errors.                                                                                                                                             |
+|             | models.py      | Passes with no validation errors.                                                                                                                                             |
+|             | serializers.py | Passes with no validation errors.                                                                                                                                             |
+|             | tests.py       | Passes with no validation errors.                                                                                                                                             |
+|             | urls.py        | Passes with no validation errors.                                                                                                                                             |
+|             | views.py       | Passes with no validation errors.                                                                                                                                             |
+| profiles    | admin.py       | Passes with no validation errors.                                                                                                                                             |
+|             | models.py      | Shortened line 16. Passed with no validation errors.                                                                                                                          |
+|             | serializers.py | Shortened lines 23, 25 and 36. Passes with no validation errors.                                                                                                              |
+|             | signals.py     | Passes with no validation errors.                                                                                                                                             |
+|             | tests.py       | Passes with no validation errors.                                                                                                                                             |
+|             | urls.py        | Passes with no validation errors.                                                                                                                                             |
+|             | views.py       | Passes with no validation errors.                                                                                                                                             |
+| tasks       | admin.py       | Added new line at end of file. Passes with no validation errors.                                                                                                              |
+|             | models.py      | Passes with no validation errors.                                                                                                                                             |
+|             | serializers.py | Passes with no validation errors.                                                                                                                                             |
+|             | urls.py        | Passes with no validation errors.                                                                                                                                             |
+|             | views.py       | Passes with no validation errors.                                                                                                                                             |
+
 ## Bugs
 
 1. The first bug I came across was during the creation of my Task serialisers. I wanted to implement an `is_overdue` serialiser method field. I hoped to do this by comparing the current datetime to the due date set in the task. The first error I came across was this type error:
