@@ -23,7 +23,8 @@ class Task(models.Model):
     :model:`profiles.Profile`.
     """
 
-    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="tasks")
+    owner = models.ForeignKey(
+        Profile, on_delete=models.CASCADE, related_name="tasks")
     title = models.CharField(max_length=255, unique=True)
     due_date = models.DateTimeField()
     created_on = models.DateTimeField(auto_now_add=True)
