@@ -18,7 +18,7 @@ class Event(models.Model):
     Creates an instance of the Event model, which has a many-
     to-one relationship with :model:`profiles.Profile`.
     """
-    owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="events")
     name = models.CharField(max_length=250, unique=True)
     date = models.DateField()
     start_time = models.TimeField()
