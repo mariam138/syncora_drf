@@ -9,7 +9,8 @@ from syncora_api.permissions import IsUserOrReadOnly
 class ProfileList(generics.ListAPIView):
     """
     Displays list of all profiles created. This view will be used for testing
-    purposes only.
+    purposes only. Profiles can also be searched by username and name, and
+    ordered by their creation date.
     """
 
     queryset = Profile.objects.all()
