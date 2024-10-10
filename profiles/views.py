@@ -17,7 +17,8 @@ class ProfileList(generics.ListAPIView):
 
     queryset = Profile.objects.annotate(
         notes_count=Count('notes', distinct=True),
-        tasks_count=Count('tasks', distinct=True)
+        tasks_count=Count('tasks', distinct=True),
+        events_count=Count('events', distinct=True)
     ).order_by("-created_on")
     serializer_class = ProfileSerializer
     filter_backends = [
