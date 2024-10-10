@@ -11,20 +11,17 @@ class ProfileList(generics.ListAPIView):
     """
     Displays list of all profiles created. This view will be used for testing
     purposes only. Profiles can also be searched by username and name, and
-    ordered by their creation date. Each profile also has a notes and
+    ordered by their creation date. Each profile also has a notes, events and
     tasks count to be used in the front end.
     """
 
     queryset = Profile.objects.annotate(
-        notes_count=Count('notes', distinct=True),
-        tasks_count=Count('tasks', distinct=True),
-        events_count=Count('events', distinct=True)
+        notes_count=Count("notes", distinct=True),
+        tasks_count=Count("tasks", distinct=True),
+        events_count=Count("events", distinct=True),
     ).order_by("-created_on")
     serializer_class = ProfileSerializer
-    filter_backends = [
-        filters.SearchFilter,
-        filters.OrderingFilter
-    ]
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ["user__username", "user__first_name"]
     ordering_fields = ["created_on"]
 
