@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # cloudinary storage underneath static files as we are only using it for media
+    # cloudinary storage underneath static files
+    # as we are only using it for media
     "cloudinary_storage",
     "cloudinary",
     # DRF framework to create API
@@ -99,7 +100,7 @@ else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.codeinstitute-ide\.net$",
         # For local host when using with vscode
-        r"^http://localhost(:\d+)?$", 
+        r"^http://localhost(:\d+)?$",
         r"^https://localhost(:\d+)?$",
     ]
 
@@ -137,7 +138,9 @@ if "DEV" in os.environ and 'test' in sys.argv:
         }
     }
 else:
-    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        }
 
 
 # Password validation
@@ -203,9 +206,9 @@ REST_FRAMEWORK = {
     "DATE_FORMAT": "%d %b %Y",
     "TIME_FORMAT": "%H:%M",
     # Pagination settings
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_PAGINATION_CLASS":
+    "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
-    # "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
 }
 
 if 'DEV' not in os.environ:
