@@ -17,6 +17,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     notes_count = serializers.ReadOnlyField()
     tasks_count = serializers.ReadOnlyField()
+    events_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
         # Checks to see if the currently logged in user is the owner of the object
@@ -46,6 +47,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             "updated_on",
             "profile_image",
             "is_owner",
+            "events_count",
             "tasks_count",
             "notes_count",
         ]
