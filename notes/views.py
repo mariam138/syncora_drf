@@ -20,6 +20,7 @@ class NoteList(generics.ListAPIView):
         DjangoFilterBackend
     ]
     search_fields = ["title", "content"]
+    ordering_fields = ["date_created", "date_updated"]
 
 
 class CreateNote(generics.CreateAPIView):
