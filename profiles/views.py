@@ -19,6 +19,7 @@ class ProfileList(generics.ListAPIView):
         filters.OrderingFilter
     ]
     search_fields = ["user__username", "user__first_name"]
+    ordering_fields = ["created_on"]
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
