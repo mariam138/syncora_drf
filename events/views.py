@@ -12,7 +12,9 @@ class EventList(generics.ListAPIView):
     """
     Displays list of events created. Events can be searched for
     in the API by the event name. Events can also be ordered by their
-    date in either ascending or descending order.
+    date in either ascending or descending order. Filtering by
+    the event model's fields is also allowed with the owner, category
+    and location fields.
     """
 
     queryset = Event.objects.all()
@@ -24,7 +26,7 @@ class EventList(generics.ListAPIView):
     ]
     search_fields = ["name"]
     ordering_fields = ["date"]
-    filterset_fields = ["category", "location"]
+    filterset_fields = ["owner", "category", "location"]
 
 
 class CreateEvent(generics.CreateAPIView):
