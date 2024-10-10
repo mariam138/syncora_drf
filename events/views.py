@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, filters
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Event
 from .serializers import EventSerializer
@@ -8,11 +8,14 @@ from syncora_api.permissions import IsOwnerOrReadOnly
 
 class EventList(generics.ListAPIView):
     """
-    Displays list of events created.
+    Displays list of events created. Events can be searched for
+    in the API by the event name.
     """
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
 
 
 class CreateEvent(generics.CreateAPIView):
@@ -27,7 +30,7 @@ class CreateEvent(generics.CreateAPIView):
     def perform_create(self, serializer):
         profile = self.request.user.profile
         serializer.save(owner=profile)
-    
+
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     """
