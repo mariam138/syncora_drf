@@ -105,6 +105,7 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 - **django-cors-headers 4.4.0** - To add Cross-Origin Resource Sharing (CORS) headers to responses, allowing in-browser requests from other origins
 - **gunicorn 23.0.0** - For use with serving the API on a web framework
 - **django-location-field 2.7.3** - This is used to allow user's to use an interactive map when inputting a location for events
+- **django-filter 24.3** - Used to allow more advanced filtering options within list views for the API, such as filtering by a category.
 
 ## Testing
 
