@@ -34,7 +34,7 @@ This model represents the user profile, to be created upon a user registering fo
 
 ##### Task
 
-The Task model has a many-to-one relationship with the *Profile* model, allowing a user to create several tasks. This many-to-one relationship is formed by the `owner` field, which is also set as the primary key of the model. A `title` field is provided to quickly name the task, and a `due_date` field also. Then the user can choose a `priority` for their task, choosing from: *low*, *medium* and *high*. A `category` can also be chosen for the task for further organisation. An optional `description` field is provided to allow the user to add any extra notes if desired. Finally, a `completed` field is provided. This is a **BooleanField** which will render as a checkbox, initially set to **False** indicating that the task is not completed.
+The Task model has a many-to-one relationship with the *Profile* model, allowing a user to create several tasks. This many-to-one relationship is formed by the `owner` field. A `title` field is provided to quickly name the task, and a `due_date` field also. Then the user can choose a `priority` for their task, choosing from: *low*, *medium* and *high*. A `category` can also be chosen for the task for further organisation. An optional `description` field is provided to allow the user to add any extra notes if desired. Finally, a `completed` field is provided. This is a **BooleanField** which will render as a checkbox, initially set to **False** indicating that the task is not completed.
 
 ##### Event
 
@@ -113,9 +113,11 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 
 Manual testing took place throughout development of the app, for both front-end and back-end. This section will focus on testing for the back-end API.
 
-Testing tables were created using **Google Sheets**. Each row containted the feature being tested, the expected outcome, whether the test passed or failed and an extra notes column for further explanation. The tables have been converted to markdown format and can be found [here](https://github.com/mariam138/syncora_drf/blob/main/manualtests.md).
+Testing tables were created using **Google Sheets**. Each row containted the feature being tested, the expected outcome, whether the test passed or failed and an extra notes column for further explanation. The tables have been converted to markdown format and can be found [here](https://github.com/mariam138/syncora_drf/blob/main/testing.md).
 
 ### Automated Testing
+
+Some automated testing was also completed for the API. Full automated testing was done for the Notes and Events API endpoints. The Profile API was partly tested with automation. All tables have been converted to markdown format and can be found in the [testing.md](https://github.com/mariam138/syncora_drf/blob/main/testing.md) file.
 
 ### Python Validation
 
