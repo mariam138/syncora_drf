@@ -1,3 +1,4 @@
+from django.db.models import Count
 from rest_framework import generics, filters
 from .models import Profile
 from .serializers import ProfileSerializer
@@ -13,7 +14,11 @@ class ProfileList(generics.ListAPIView):
     ordered by their creation date.
     """
 
-    queryset = Profile.objects.all()
+    # queryset = Profile.objects.all()
+    queryset = Profile.objects.annotate(
+        notes_count=Count('notes', distinct=True),
+        tasks_count=Count('tasks', distinct=True)
+    )
     serializer_class = ProfileSerializer
     filter_backends = [
         filters.SearchFilter,
