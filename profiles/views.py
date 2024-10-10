@@ -15,6 +15,9 @@ class ProfileList(generics.ListAPIView):
     tasks count to be used in the front end.
     """
 
+    # Use annotate method to add notes, tasks and events count
+    # to each profile. Code adapted from:
+    # https://github.com/Code-Institute-Solutions/drf-api/blob/a7033eacc714c79df49679fbebd455e300e09d95/posts/views.py
     queryset = Profile.objects.annotate(
         notes_count=Count("notes", distinct=True),
         tasks_count=Count("tasks", distinct=True),
