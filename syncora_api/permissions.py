@@ -1,4 +1,5 @@
-# Creates custom permission to check if the user is also the owner of an instance
+# Creates custom permission to check if the user
+# is also the owner of an instance
 # to allow editing, otherwise the view is read-only.
 # Code adapted from the django rest framework documentation
 # https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
