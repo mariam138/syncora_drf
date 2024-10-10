@@ -22,6 +22,7 @@ class TaskList(generics.ListAPIView):
     ]
     search_fields = ["title", "description"]
     ordering_fields = ["due_date", "priority"]
+    filterset_fields = ["owner", "priority", "category", "completed"]
 
 
 class CreateTask(generics.CreateAPIView):
