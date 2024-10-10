@@ -3,7 +3,7 @@ from profiles.models import Profile
 
 # Create your models here.
 
-PRIORITY_CHOICES = [("L", "low"), ("M", "medium"), ("H", "high")]
+PRIORITY_CHOICES = [("L", "Low"), ("M", "Medium"), ("H", "High")]
 
 CATEGORY_CHOICES = [
     ("WORK", "Work"),
