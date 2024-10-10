@@ -196,6 +196,9 @@ REST_FRAMEWORK = {
             else "dj_rest_auth.jwt_auth.JWTCookieAuthentication"
         )
     ],
+    "DATETIME_FORMAT": "%d %b %Y, %H:%M.",
+    "DATE_FORMAT": "%d %b %Y",
+    "TIME_FORMAT": "%H:%M",
 }
 
 if 'DEV' not in os.environ:
