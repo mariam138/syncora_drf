@@ -1,4 +1,5 @@
-from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import generics, filters
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer, CreateTaskSerializer
@@ -14,6 +15,12 @@ class TaskList(generics.ListAPIView):
 
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    filter_backends = [
+        filters.SearchFilter,
+        filters.OrderingFilter,
+        DjangoFilterBackend,
+    ]
+    search_fields = ["title", "description"]
 
 
 class CreateTask(generics.CreateAPIView):
