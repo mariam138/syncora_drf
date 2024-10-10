@@ -7,6 +7,7 @@ from syncora_api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
+
 class EventList(generics.ListAPIView):
     """
     Displays list of events created. Events can be searched for
@@ -16,10 +17,14 @@ class EventList(generics.ListAPIView):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_backends = [filters.SearchFilter, filters.OrderingFilter, DjangoFilterBackend]
-    search_fields = ['name']
-    ordering_fields = ['date']
-    filterset_fields = ['category', 'location']
+    filter_backends = [
+        filters.SearchFilter,
+        filters.OrderingFilter,
+        DjangoFilterBackend,
+    ]
+    search_fields = ["name"]
+    ordering_fields = ["date"]
+    filterset_fields = ["category", "location"]
 
 
 class CreateEvent(generics.CreateAPIView):
