@@ -46,6 +46,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             "updated_on",
             "profile_image",
             "is_owner",
-            "notes_count",
             "tasks_count",
+            "notes_count",
         ]
