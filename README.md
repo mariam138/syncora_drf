@@ -97,10 +97,10 @@ The **Syncora** API is created with Python using Django 5.0 and the Django REST 
 - **Cloudinary 1.41.0** - To allow storage of profile pictures when users upload a new one
 - **django-cloudinary-storage 0.3.0** - To allow integration of storage with the Django framework
 - **Pillow 10.4** - For use with Django's ImageField, as recommended by the django-cloudinary-storage docs
-- **dj-database-url** - To connect to my extgernal postgreSQL database using a URL
-- **psycopg2** - Used as a PostgreSQL database adapter when connecting to the external database
-- **dj-rest-auth** - For use in providing REST API endpoints for user registration and authentication
-- **django-allauth** - Although not explicitly used in this API, it is used in conjunction with *dj-rest-auth* to include registration functionality, as suggested by the documentation.
+- **dj-database-url 2.2.0** - To connect to my extgernal postgreSQL database using a URL
+- **psycopg2 2.9.9** - Used as a PostgreSQL database adapter when connecting to the external database
+- **dj-rest-auth 6.0.0** - For use in providing REST API endpoints for user registration and authentication
+- **django-allauth 0.61.1** - Although not explicitly used in this API, it is used in conjunction with *dj-rest-auth* to include registration functionality, as suggested by the documentation.
 - **djangorestframework-simplejwt 5.3.1** - To allow use of JSON web tokens in the production version of the API
 - **django-cors-headers 4.4.0** - To add Cross-Origin Resource Sharing (CORS) headers to responses, allowing in-browser requests from other origins
 - **gunicorn 23.0.0** - For use with serving the API on a web framework
