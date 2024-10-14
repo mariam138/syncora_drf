@@ -96,13 +96,14 @@ MIDDLEWARE = [
 # Setting cors headers origins
 if "CLIENT_ORIGIN" in os.environ:
     CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN")]
-else:
+if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.codeinstitute-ide\.net$",
         # For local host when using with vscode
         r"^http://localhost(:\d+)?$",
         r"^https://localhost(:\d+)?$",
     ]
+
 
 # Allow use of cookies in cross-site HTTP requests
 CORS_ALLOW_CREDENTIALS = True
