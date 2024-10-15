@@ -92,7 +92,7 @@ Tables were converted to markdown syntax using [tabletomarkdown](https://tableto
 
 ## Frameworks, libraries and dependencies
 
-The **Syncora** API is created with Python using Django 5.0 and the Django REST Framework 3.5.12. The following additional dependencies were also used in creating the API:
+The **Syncora** API is created with Python using Django 4.2 and the Django REST Framework 3.5.12. The following additional dependencies were also used in creating the API:
 
 - **Cloudinary 1.41.0** - To allow storage of profile pictures when users upload a new one
 - **django-cloudinary-storage 0.3.0** - To allow integration of storage with the Django framework
