@@ -163,6 +163,8 @@ Each file was validated using the **Code Institute** [python linter](https://pep
 
     After searching around, I was able to fix this error. However, then I was struggling to compare the current datetime and the duedate. The due date would be saved in my current time zone, but using print statements to debug, the current datetime was only printing in UTC. I tried several solutions, including creating a custom Mixin and implementing it into the serialiser and the view, but unfortunately this did not work. In the end I decided to remove this feature from the backend and will implement it in the frontend, using the timezone of the user's browser for comparison. Another solution would be to add a **timezone** field to the **Profile** model, then localising the current datetime to this timezone. Whether this would conflict with Django's timezone settings is unclear however.
 
+2. In relation to the front-end of this project, I came across a bug where my front-end application was unable to make requests to the API, leading to errors being displayed in the console. More information can be found in the Syncora React [README](https://github.com/mariam138/syncora_react#bugs). After conversing with tutor support, this bug was able to be fixed by checking the compatibility of the installed dependencies, using the terminal command `pip install -r requirements.txt`. This showed that there was compatibility issues between the dependencies and the version of Django that I was using. Initially, I was using Django 5.0, but downgrading to 4.2 helped to solve the error. This has been updated in this README as well. 
+
 ## Deployment
 
 The following steps were followed in order to deploy the API onto Heroku:
