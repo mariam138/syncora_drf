@@ -165,6 +165,8 @@ Each file was validated using the **Code Institute** [python linter](https://pep
 
 2. In relation to the front-end of this project, I came across a bug where my front-end application was unable to make requests to the API, leading to errors being displayed in the console. More information can be found in the Syncora React [README](https://github.com/mariam138/syncora_react#bugs). After conversing with tutor support, this bug was able to be fixed by checking the compatibility of the installed dependencies, using the terminal command `pip install -r requirements.txt`. This showed that there was compatibility issues between the dependencies and the version of Django that I was using. Initially, I was using Django 5.0, but downgrading to 4.2 helped to solve the error. This has been updated in this README as well. 
 
+3. Another bug which appeared during creation of the front-end was the registration of a new user. When a new user was registered, the expected behaviour was not occurring but instead a 500 console error was being displayed. More information can be found in the front-end [README](ttps://github.com/mariam138/syncora_react#bugs). This issue turned out to be related to the e-mail configuration of the back-end. An issue under the **dj-rest-auth** repository which had a similar issue linked me to [this](https://github.com/MuhammadAnas47/django-rest-auth/blob/master/demo/demo/settings.py) demo template with some added e-mail configurations in `settings.py`. Implementing these settings into my workspace solved this issue, leading to the expected behaviour on the front-end.
+
 ## Deployment
 
 The following steps were followed in order to deploy the API onto Heroku:
