@@ -80,6 +80,13 @@ INSTALLED_APPS = [
 
 # For use with django all-auth for registration functionality
 SITE_ID = 1
+# Updated email settings for registration on front-end
+# Adapted from this demo template for dj-rest-auth:
+#https://github.com/MuhammadAnas47/django-rest-auth/blob/master/demo/demo/settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
