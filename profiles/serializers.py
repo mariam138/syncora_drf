@@ -29,15 +29,15 @@ class ProfileSerializer(serializers.ModelSerializer):
         request = self.context["request"]
         return request.user == obj.user
 
-    def validate_profile_image(self, value):
-        """Custom validator for uploading a profile picture, ensuring it is
-        less than 2MB in size. Code adopted from Code Institute's Django REST
-        Framework module when creating the post serialiser."""
-        if value.size > 1024 * 1024 * 2:
-            raise serializers.ValidationError(
-                "Image cannot be larger than 2MB."
-                "Please choose a smaller image."
-            )
+    # def validate_profile_image(self, value):
+    #     """Custom validator for uploading a profile picture, ensuring it is
+    #     less than 2MB in size. Code adopted from Code Institute's Django REST
+    #     Framework module when creating the post serialiser."""
+    #     if value.size > 1024 * 1024 * 2:
+    #         raise serializers.ValidationError(
+    #             "Image cannot be larger than 2MB."
+    #             "Please choose a smaller image."
+            # )
 
     class Meta:
         model = Profile
