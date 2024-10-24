@@ -33,7 +33,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         """Custom validator for uploading a profile picture, ensuring it is
         less than 2MB in size. Code adopted from Code Institute's Django REST
         Framework module when creating the post serialiser."""
-        print(value.size)
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
                 "Image cannot be larger than 2MB."
