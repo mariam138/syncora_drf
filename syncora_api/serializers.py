@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
+from django.contrib.auth.models import User
 
 
 class CustomRegisterSerializer(RegisterSerializer):
@@ -18,3 +19,7 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.first_name = self.validated_data.get("first_name")
         user.save()
         return user
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'username', 'email', 'password1', 'password2']
