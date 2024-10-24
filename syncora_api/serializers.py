@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from dj_rest_auth.registration.serializers import RegisterSerializer
-from django.contrib.auth.models import User
+from dj_rest_auth.registration.views import RegisterView
 
 
 class CustomRegisterSerializer(RegisterSerializer):
@@ -12,14 +12,11 @@ class CustomRegisterSerializer(RegisterSerializer):
     https://stackoverflow.com/questions/62291394/django-rest-auth-dj-rest-auth-custom-user-registration
     """
 
-    first_name = serializers.CharField()
+    first_name = serializers.CharField(required=True)
 
-    def save(self, request):
-        user = super().save(request)
-        user.first_name = self.validated_data.get("first_name")
-        user.save()
-        return user
+    def custom_signup(self, request, user):
+        user.first_name = self.validated_data.get('first_name', '')
+        user.save(update_fields=['first_name',])
 
-    class Meta:
-        model = User
-        fields = ['first_name', 'username', 'email', 'password1', 'password2']
+class CustomRegisterView(RegisterView):
+    serializer_class = CustomRegisterSerializer
