@@ -9,7 +9,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     field to the registration form. This makes it mandatory when signing up,
     making it easier to be made a part of the profile instance for use
     in the front-end. Code adapted from:
-    https://stackoverflow.com/questions/62291394/django-rest-auth-dj-rest-auth-custom-user-registration
+    https://stackoverflow.com/questions/36910373/django-rest-auth-allauth-registration-with-email-first-and-last-name-and-witho
     """
 
     first_name = serializers.CharField(required=True)
