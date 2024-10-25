@@ -14,11 +14,18 @@ class NoteList(generics.ListAPIView):
     descending order.
     """
 
-    queryset = Note.objects.all()
     serializer_class = NoteSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ["title", "content"]
     ordering_fields = ["date_created", "date_updated"]
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            owner = self.request.user.profile
+            queryset = Note.objects.filter(owner=owner)
+        else:
+            queryset = Note.objects.all()
+        return queryset
 
 
 class CreateNote(generics.CreateAPIView):
