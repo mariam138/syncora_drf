@@ -1,5 +1,4 @@
 from django.db import models
-from location_field.models.plain import PlainLocationField
 from profiles.models import Profile
 
 # Create your models here.
@@ -27,7 +26,7 @@ class Event(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES)
-    location = PlainLocationField(based_fields=["city"], zoom=7)
+    location = models.CharField(max_length=250)
     notes = models.TextField(blank=True)
 
     class Meta:
