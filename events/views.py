@@ -17,7 +17,7 @@ class EventList(generics.ListAPIView):
     and location fields.
     """
 
-    queryset = Event.objects.all()
+    # queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = [
         filters.SearchFilter,
@@ -27,6 +27,10 @@ class EventList(generics.ListAPIView):
     search_fields = ["name"]
     ordering_fields = ["date"]
     filterset_fields = ["owner", "category", "location"]
+
+    def get_queryset(self):
+        owner = self.request.user.profile
+        return Event.objects.filter(owner=owner)
 
 
 class CreateEvent(generics.CreateAPIView):
