@@ -23,6 +23,7 @@ Separate tables were created for each model and it's API endpoints. Tables were 
 | Tested Feature                | Expected Outcome                                                                                                      | Pass/Fail | Notes                                                                                                                           |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | View list of tasks            | At the /tasks endpoint, a list of tasks can be seen.                                                                  | Pass      |                                                                                                                                 |
+| View owner's list of tasks    | When logged in, at the /tasks endpoint, a list of only the owner's tasks can be viewed/                               | Pass      |                                                                                                                                 |
 | Create a new task             | When logged in, a new task is able to be created.                                                                     | Pass      |                                                                                                                                 |
 | Edit, View, Delete task by id | If I am not the owner of the task, I am only able to view it and don't have the options to update or delete the task. | Pass      |                                                                                                                                 |
 | Edit task by id               | If I am the owner of the task, I am able to update my task.                                                           | Pass      |                                                                                                                                 |
@@ -31,25 +32,27 @@ Separate tables were created for each model and it's API endpoints. Tables were 
 
 ### Event API
 
-| Tested Feature            | Expected Outcome                                                                                           | Pass/Fail | Notes |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | ----- |
-| View list of events       | At /events/ endpoint, a list of events can be seen                                                         | Pass      |       |
-| Create a new event        | When logged in, a new event is able to be created. This should not be accessible to unauthenticated users. | Pass      |       |
-| View event detail by id   | Any user can view an event detail by id.                                                                   | Pass      |       |
-| Update event detail by id | If the user is the owner, the event can be updated. If not the owner, this functionality is not available. | Pass      |       |
-| Delete event detail by id | If the user is the owner, the event can be deleted. If not the owner, this functionality is not available. | Pass      |
+| Tested Feature              | Expected Outcome                                                                                           | Pass/Fail | Notes |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | ----- |
+| View list of events         | At /events/ endpoint, a list of events can be seen                                                         | Pass      |       |
+| View owner's list of events | When logged in, at the /events endpoint, a list of only the owner's events can be viewed                   | Pass      |       |
+| Create a new event          | When logged in, a new event is able to be created. This should not be accessible to unauthenticated users. | Pass      |       |
+| View event detail by id     | Any user can view an event detail by id.                                                                   | Pass      |       |
+| Update event detail by id   | If the user is the owner, the event can be updated. If not the owner, this functionality is not available. | Pass      |       |
+| Delete event detail by id   | If the user is the owner, the event can be deleted. If not the owner, this functionality is not available. | Pass      |
 
 ### Note API
 
-| Tested Feature           | Expected Outcome                                                                       | Pass/Fail | Notes |
-| ------------------------ | -------------------------------------------------------------------------------------- | --------- | ----- |
-| View list of notes       | At the notes/ endpoint, a list of notes can be seen                                    | Pass      |       |
-| Create a new note        | At notes/new/, the user is able to create a note if authenticated.                     | Pass      |       |
-| Create a new note        | If unauthorised, the option to create a note is not available.                         | Pass      |       |
-| View note detail by id   | Authroised and unauthorised users are able to view a note's detail by id               | Pass      |       |
-| Update note by id        | If the owner of the note, the note can then be updated                                 | Pass      |       |
-| Delete note by id        | If owner of the note, then the note can be deleted                                     | Pass      |       |
-| Update/delete note by id | If not the owner or an unauthorised user, then these functionalities are not available | Pass      |
+| Tested Feature             | Expected Outcome                                                                       | Pass/Fail | Notes |
+| -------------------------- | -------------------------------------------------------------------------------------- | --------- | ----- |
+| View list of notes         | At the notes/ endpoint, a list of notes can be seen                                    | Pass      |       |
+| View owner's list of notes | When logged in, at the /notes endpoint, a list of only the owner's notes can be viewed | Pass      |       |
+| Create a new note          | At notes/new/, the user is able to create a note if authenticated.                     | Pass      |       |
+| Create a new note          | If unauthorised, the option to create a note is not available.                         | Pass      |       |
+| View note detail by id     | Authroised and unauthorised users are able to view a note's detail by id               | Pass      |       |
+| Update note by id          | If the owner of the note, the note can then be updated                                 | Pass      |       |
+| Delete note by id          | If owner of the note, then the note can be deleted                                     | Pass      |       |
+| Update/delete note by id   | If not the owner or an unauthorised user, then these functionalities are not available | Pass      |
 
 ## Automated Tests
 
