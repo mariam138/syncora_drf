@@ -17,7 +17,6 @@ class EventList(generics.ListAPIView):
     and location fields.
     """
 
-    # queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = [
         filters.SearchFilter,

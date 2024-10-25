@@ -13,7 +13,6 @@ class TaskList(generics.ListAPIView):
     Displays list of tasks created.
     """
 
-    queryset = Task.objects.all()
     serializer_class = TaskSerializer
     filter_backends = [
         filters.SearchFilter,
@@ -23,6 +22,14 @@ class TaskList(generics.ListAPIView):
     search_fields = ["title", "description"]
     ordering_fields = ["due_date", "priority"]
     filterset_fields = ["owner", "priority", "category", "completed"]
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            owner = self.request.user.profile
+            queryset = Task.objects.filter(owner=owner)
+        else:
+            queryset = Task.objects.all()
+        return queryset
 
 
 class CreateTask(generics.CreateAPIView):
