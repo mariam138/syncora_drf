@@ -92,7 +92,7 @@ Tables were converted to markdown syntax using [tabletomarkdown](https://tableto
 
 ## Frameworks, libraries and dependencies
 
-The **Syncora** API is created with Python using Django 4.2 and the Django REST Framework 3.5.12. The following additional dependencies were also used in creating the API:
+The **Syncora** API is created with Python using Django 4.2 and the Django REST Framework 3.14.0. The following additional dependencies were also used in creating the API:
 
 - **Cloudinary 1.41.0** - To allow storage of profile pictures when users upload a new one
 - **django-cloudinary-storage 0.3.0** - To allow integration of storage with the Django framework
@@ -104,8 +104,9 @@ The **Syncora** API is created with Python using Django 4.2 and the Django REST 
 - **djangorestframework-simplejwt 5.3.1** - To allow use of JSON web tokens in the production version of the API
 - **django-cors-headers 4.3.1** - To add Cross-Origin Resource Sharing (CORS) headers to responses, allowing in-browser requests from other origins
 - **gunicorn 23.0.0** - For use with serving the API on a web framework
-- **django-location-field 2.7.3** - This is used to allow user's to use an interactive map when inputting a location for events
 - **django-filter 23.5** - Used to allow more advanced filtering options within list views for the API, such as filtering by a category.
+- **python3-openid 3.2.0** - This is a prerequisite library used in conjuction with _dj-rest-auth_
+- **pytz 2024.2** - This is a library installed by Django 4.2 as a dependency, although not explicity used within the app
 
 ## Testing
 
