@@ -67,8 +67,6 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "dj_rest_auth.registration",
     "corsheaders",
-    # django location field
-    "location_field.apps.DefaultConfig",
     # django filters
     "django_filters",
     # Custom apps
@@ -236,10 +234,4 @@ REST_AUTH = {
 # Use custom registration serialiser
 REST_AUTH_REGISTER_SERIALIZERS = {
     "REGISTER_SERIALIZER": "syncora_api.serializers.CustomRegisterSerializer"
-}
-
-# django-location-field settings
-LOCATION_FIELD = {
-    "map.provider": "openstreetmap",
-    "provider.openstreetmap.max_zoom": 18,
 }
