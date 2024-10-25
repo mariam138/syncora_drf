@@ -38,7 +38,7 @@ The Task model has a many-to-one relationship with the *Profile* model, allowing
 
 ##### Event
 
-Like the *Task* model, the **Event** model also has a many-to-one relationship with the *User* model. This allows a user to create several events on the app. This relationship is provided by the `owner` field. A `name` is required for each event, followed by a `date`, a `start_time` and `end_time`. Events can also be categorised, providing a list of choices for the `category` field. A `location` can also be added for events, which is provided by the *django-location-field* library. Finally, a separate `notes` field is provided which is optional, allowing the user to choose whether to provide extra notes or not.
+Like the *Task* model, the **Event** model also has a many-to-one relationship with the *User* model. This allows a user to create several events on the app. This relationship is provided by the `owner` field. A `name` is required for each event, followed by a `date`, a `start_time` and `end_time`. Events can also be categorised, providing a list of choices for the `category` field. A `location` can also be added for events. Although initially _django-location-field_ was included in the database scheme, due to time constraints with including an interactive map on the front end to work with the back end, this was replaced with a character field instead. Finally, a separate `notes` field is provided which is optional, allowing the user to choose whether to provide extra notes or not.
 
 ##### Note
 
