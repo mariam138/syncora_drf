@@ -13,15 +13,18 @@ class CustomRegisterSerializer(RegisterSerializer):
     """
 
     first_name = serializers.CharField(required=True)
+    email = serializers.EmailField(required=False)
 
     def get_cleaned_data(self):
         cleaned_data = super().get_cleaned_data()  # Get the cleaned data from the parent class
-        cleaned_data['first_name'] = self.validated_data.get('first_name')
+        cleaned_data["first_name"] = self.validated_data.get("first_name")
+        cleaned_data["email"] = self.validated_data.get("email")
         return cleaned_data
 
     def custom_signup(self, request, user):
-        user.first_name = self.validated_data.get('first_name', '')
-        user.save(update_fields=['first_name',])
+        user.first_name = self.validated_data.get("first_name", "")
+        user.email = self.validated_data.get("email", "")
+        user.save(update_fields=['first_name', 'email'])
 
 
 class CustomRegisterView(RegisterView):

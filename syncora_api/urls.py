@@ -28,9 +28,17 @@ urlpatterns = [
     path("", include("events.urls")),
     path("", include("notes.urls")),
     path("admin/", admin.site.urls),
-    path("api-auth/", include(
-        "rest_framework.urls", namespace="rest_framework"
-        )),
-    path('dj-rest-auth/registration/', CustomRegisterView.as_view(), name='rest_registration'),
+    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path(
+        "dj-rest-auth/registration/",
+        CustomRegisterView.as_view(),
+        name="rest_registration",
+    ),
     path("dj-rest-auth/", include("dj_rest_auth.urls")),
+    # Added for the email view from all auth as dj-rest-auth
+    # relies on allauth
+    # prevents 500 error when user signs up with an e-mail
+    # Solution from:
+    # https://github.com/Tivix/django-rest-auth/issues/534#issuecomment-491849803
+    path("accounts/", include("allauth.urls")),
 ]
