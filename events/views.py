@@ -29,8 +29,12 @@ class EventList(generics.ListAPIView):
     filterset_fields = ["owner", "category", "location"]
 
     def get_queryset(self):
-        owner = self.request.user.profile
-        return Event.objects.filter(owner=owner)
+        if self.request.user.is_authenticated:
+            owner = self.request.user.profile
+            queryset = Event.objects.filter(owner=owner)
+        else:
+            queryset = Event.objects.all()
+        return queryset
 
 
 class CreateEvent(generics.CreateAPIView):
