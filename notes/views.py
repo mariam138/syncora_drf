@@ -8,10 +8,11 @@ from syncora_api.permissions import IsOwnerOrReadOnly
 # Create your views here.
 class NoteList(generics.ListAPIView):
     """
-    Displays a list of notes to the user Notes can be searched by
+    Displays a list of notes to the user. Notes can be searched by
     their title or their content. Notes can also be ordered by either
     their creation date or date updated, both in ascending and
-    descending order.
+    descending order. When logged in, only the user's notes will
+    be displayed to them.
     """
 
     serializer_class = NoteSerializer

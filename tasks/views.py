@@ -10,7 +10,11 @@ from syncora_api.permissions import IsOwnerOrReadOnly
 
 class TaskList(generics.ListAPIView):
     """
-    Displays list of tasks created.
+    Displays list of tasks created. Tasks can be searched by title and
+    description. Tasks can be ordered by due date and priority. Tasks
+    can be filtered by the owner, priority, category and whether they have
+    been completed or not. When logged in, only the user's tasks
+    are displayed to them.
     """
 
     serializer_class = TaskSerializer

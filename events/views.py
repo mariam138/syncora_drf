@@ -14,7 +14,8 @@ class EventList(generics.ListAPIView):
     in the API by the event name. Events can also be ordered by their
     date in either ascending or descending order. Filtering by
     the event model's fields is also allowed with the owner, category
-    and location fields.
+    and location fields. When logged in, only the owner's events
+    are displayed.
     """
 
     serializer_class = EventSerializer
