@@ -4,6 +4,13 @@ from .models import Task
 
 class TaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source="owner.user.username")
+    """
+    Display human readable label for category choices. This is used for the
+    front end display. Code adapted from
+    https://github.com/encode/django-rest-framework/issues/1755#issuecomment-945167944
+    and the comment below it.
+    """
+    category_display = serializers.CharField(source="get_category_display")
 
     class Meta:
         model = Task
@@ -14,6 +21,7 @@ class TaskSerializer(serializers.ModelSerializer):
             "due_date",
             "priority",
             "category",
+            "category_display",
             "description",
             "completed",
         ]
