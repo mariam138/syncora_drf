@@ -10,7 +10,7 @@ class EventSerializer(serializers.ModelSerializer):
     https://github.com/encode/django-rest-framework/issues/1755#issuecomment-945167944
     and the comment below it.
     """
-    category_display = serializers.CharField(source="get_category_display")
+    category_display = serializers.CharField(source="get_category_display", read_only=True)
 
     class Meta:
         model = Event
