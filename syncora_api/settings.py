@@ -80,7 +80,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 # Updated email settings for registration on front-end
 # Adapted from this demo template for dj-rest-auth:
-#https://github.com/MuhammadAnas47/django-rest-auth/blob/master/demo/demo/settings.py
+# https://github.com/MuhammadAnas47/django-rest-auth/blob/master/demo/demo/settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
@@ -207,12 +207,11 @@ REST_FRAMEWORK = {
         )
     ],
     # Date/Time formatting
-    "DATETIME_FORMAT": "%d %b %Y, %H:%M.",
+    "DATETIME_FORMAT": "%Y-%m-%d, %H:%M.",
     "DATE_FORMAT": "%Y-%m-%d",
     "TIME_FORMAT": "%H:%M",
     # Pagination settings
-    "DEFAULT_PAGINATION_CLASS":
-    "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
 
