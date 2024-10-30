@@ -208,7 +208,7 @@ REST_FRAMEWORK = {
     ],
     # Date/Time formatting
     "DATETIME_FORMAT": "%d %b %Y, %H:%M.",
-    "DATE_FORMAT": "%d %b %Y",
+    "DATE_FORMAT": "%Y-%m-%d",
     "TIME_FORMAT": "%H:%M",
     # Pagination settings
     "DEFAULT_PAGINATION_CLASS":
