@@ -13,6 +13,12 @@ class EventSerializer(serializers.ModelSerializer):
     category_display = serializers.CharField(source="get_category_display", read_only=True)
     date = serializers.DateField(format="%Y-%m-%d")
 
+    # Ensure event name is capitalised
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        rep['name'] = rep["name"].capitalize()
+        return rep
+
     class Meta:
         model = Event
         fields = [
