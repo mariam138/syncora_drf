@@ -27,5 +27,6 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.save(update_fields=['first_name', 'email'])
 
 
+
 class CustomRegisterView(RegisterView):
     serializer_class = CustomRegisterSerializer
