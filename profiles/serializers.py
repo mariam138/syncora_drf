@@ -51,7 +51,9 @@ class ProfileSerializer(serializers.ModelSerializer):
             rep['email'] = 'Hidden'
         else:
             rep['email'] = 'No email provided'
+        rep['name'] = rep['name'].capitalize()
         return rep
+    
 
     class Meta:
         model = Profile
