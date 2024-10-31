@@ -13,7 +13,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     """
 
     first_name = serializers.CharField(required=True)
-    email = serializers.EmailField(required=False)
+    email = serializers.EmailField(required=False, allow_blank=True)
 
     def get_cleaned_data(self):
         cleaned_data = super().get_cleaned_data()  # Get the cleaned data from the parent class
