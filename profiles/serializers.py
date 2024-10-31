@@ -35,8 +35,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         Framework module when creating the post serialiser."""
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
-                "Image cannot be larger than 2MB."
-                " Please choose a smaller image."
+                "Image cannot be larger than 2MB." " Please choose a smaller image."
             )
         return value
 
@@ -48,12 +47,12 @@ class ProfileSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         rep = super().to_representation(instance)
         if instance.user.email:
-            rep['email'] = 'Hidden'
+            rep["email"] = "Hidden"
         else:
-            rep['email'] = 'No email provided'
-        rep['name'] = rep['name'].capitalize()
+            rep["email"] = "No email provided"
+        # Capitalise user's names if they enter it lowercase on sign up
+        rep["name"] = rep["name"].capitalize()
         return rep
-    
 
     class Meta:
         model = Profile
