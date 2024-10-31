@@ -170,6 +170,12 @@ Each file was validated using the **Code Institute** [python linter](https://pep
 
     a. The same console issue occurred after including the first_name field in the custom register serialiser. After some debugging, this appeared to be because of using email to sign up with again. Potentially there was conflict with the new custom registration serialiser and the already established serialiser provided by *dj-rest-auth*. After coming across an [issue](https://github.com/Tivix/django-rest-auth/issues/534) on GitHub with the same problem, this was solved by including the *allauth* urls, as dj-rest-auth relies on *allauth* for authentication. This solved the 500 console error.
 
+    b. A further issue occurred again with registration without using an e-mail. A 500 error console again was displayed if a user tried to sign up without an e-mail address. Opening up the development server and trying to register on the back-end manually led to the following error: 
+
+    > IntegrityError at /dj-rest-auth/registration/ null value in column "email" of relation "auth_user" violates not-null constraint
+
+    Although I had set required to false in the register serialiser, it was being assigned null which was not allowed. Adding `allow_blank = True` to the email serialiser field solved this problem, allowing users to sign up successfully without using an email.
+
 4. When creating the functionality on the front-end to allow a user to change their profile picture and testing it, the default picture was being removed but the new picture was not being set. Instead, with debugging statements, the profile picture was set to `null`. Although initially there were no issues uploading images from the back-end when testing the API, checking again after encountering this error on the front end lead to the same result. It appeared that the custom validator I had created in the profile serialiser was causing no images to be uploaded at all, from both the front and back end. I temporarily commented it out on the back end and added some validation on the front end. I then uncommented the custom validator in the profile serialiser, making sure to add `return value` at the end of the method after using print statements to check that images were being recognised when uploaded. This fixed the upload error on both the front and back ends of the app.
 
 ## Deployment
