@@ -1,0 +1,435 @@
+[{"model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$9uYxjHozAeultVfJLjNhtb$Rpdx/sfaNHlXNfTmM/Y3LeG9Jr+OdAlX3e/6PQGssJ0=",
+        "last_login": "2024-10-28T11:37:37.355Z",
+        "is_superuser": true,
+        "username": "mariam98",
+        "first_name": "Mariam",
+        "last_name": "",
+        "email": "mar.ayoub98@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-02T16:35:46Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VRpzbSpIiy0FYQh02WdBBy$WEw6lq/5X5ZEQFuZeULR+K9evD1aZZP0PNJNQol9g2M=",
+        "last_login": "2024-10-25T07:39:15.023Z",
+        "is_superuser": false,
+        "username": "testmariam",
+        "first_name": "Mariam",
+        "last_name": "",
+        "email": "mar.ayoub98@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-03T16:29:11Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$M62Kv1OM1TJFpV4x0Z7tNZ$h/VtZz8KQOGYbotrhzifY/N7XEq/6SMfHsOtVT6xXBc=",
+        "last_login": "2024-10-03T16:36:17.084Z",
+        "is_superuser": true,
+        "username": "deletemariam",
+        "first_name": "Mariam",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-03T16:33:50Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$7gQzx7Z33A1exHH2IZKKeF$EGOoIZQOyeNpvYnR7fo85OUzJIKvmH40OvLoEaRnIaI=",
+        "last_login": "2024-10-31T07:50:43.865Z",
+        "is_superuser": false,
+        "username": "testaccount2",
+        "first_name": "",
+        "last_name": "",
+        "email": "mayoub.test@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T08:47:21.996Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$FiiNpHJbBY7FzWSImBowXC$BLOqT27dDPKgi5nPmiEbxFUbEgOn/KWX8Zd0W8TEDhE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "seonghwa98",
+        "first_name": "Seonghwa",
+        "last_name": "",
+        "email": "mayoub.test@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T14:15:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$3NshxU4opKOJDRhRHEXHtf$Hf5n3OOgoSYjUygLdMkDLWyS+vOnnPgnQhs/U3d4Nt8=",
+        "last_login": "2024-10-30T07:47:07.660Z",
+        "is_superuser": false,
+        "username": "hongjoong98",
+        "first_name": "Hongjoong",
+        "last_name": "",
+        "email": "mayoub.test@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T14:33:14Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$IeA6YWd1sk5k76G8H5RstZ$DD2KAsW6LCh3saoRTzCbYxM9bwAsXboV/Np9AGhA/64=",
+        "last_login": "2024-10-22T17:10:31.282Z",
+        "is_superuser": false,
+        "username": "test",
+        "first_name": "",
+        "last_name": "",
+        "email": "test@test.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-22T16:40:20.139Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$toT4c4VRLO4Nt2OKhk7fXJ$DIcvIEHD6QrXsDaZwliR2WAlxrX1RWfARQwA00lA6Mg=",
+        "last_login": "2024-10-23T12:53:37.955Z",
+        "is_superuser": true,
+        "username": "testing",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-22T17:18:46.179Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$gw1bRvXf9AeHbDEUqDqTqb$hKTsIsjvvMfOcMVmgBdUSe3vt1P114i8UWMOhrueNNg=",
+        "last_login": "2024-10-24T13:22:56.017Z",
+        "is_superuser": false,
+        "username": "ilovecheese",
+        "first_name": "test",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-24T13:22:55.269Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$hV8Dw9kEOFSl05t8Tz93lM$1Ira7y91QgJ6+TV1JQ5y6rmkhVcgW94UDha7V7P96Bw=",
+        "last_login": "2024-10-24T13:28:12.267Z",
+        "is_superuser": false,
+        "username": "ddeongbyeoli",
+        "first_name": "Ddeongbyeoli",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-24T13:28:11.723Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$v2hl20eBk6pfMuS4Ie4kOl$JbyCR/GkoOqQZ4JFMVHWnYazmRypWwC/frHuLvQKemA=",
+        "last_login": "2024-10-31T07:50:06.384Z",
+        "is_superuser": false,
+        "username": "felix00",
+        "first_name": "Felix",
+        "last_name": "",
+        "email": "mayoub.test@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-25T09:03:01.536Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$eBmaEQ1rspTaYs4jmD01vc$O2wZbyrj2OGqYDHrha2jylCmTLVWjERc67d7LKcPgoc=",
+        "last_login": "2024-10-30T09:39:31.990Z",
+        "is_superuser": false,
+        "username": "san99",
+        "first_name": "San",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-25T09:16:01.521Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$32N8GpMnTjrjNOMOgJ1jIt$dxzJjdIPLits0lXVDlgJWYDOClZgraKZK2Zv/wW9G94=",
+        "last_login": "2024-10-25T09:24:01.676Z",
+        "is_superuser": false,
+        "username": "yunho99",
+        "first_name": "Yunho",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-25T09:24:01.149Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$vR0TNw7bqnxTUtQSKGYXPf$sf2DFzmw9XFRjYiW7Nk+ZvwtsTL+1MPW9W0qd3zVlHo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "yeosang156",
+        "first_name": "Yeosang",
+        "last_name": "",
+        "email": "egyptpurple@yahoo.co.uk",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-25T09:25:36.389Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$FxuZbRrjyIJ9vknjPbqWz7$R9v+QZpfaqm25TwgHdnDVMRAUJGHCS893OeYVLKZGaE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mingi99",
+        "first_name": "Mingi",
+        "last_name": "",
+        "email": "mayoub.test@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-25T09:35:26.114Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},{
+    "model": "events.event",
+    "pk": 1,
+    "fields": {
+        "owner": 2,
+        "name": "New event title",
+        "date": "2024-10-07",
+        "start_time": "17:27:31",
+        "end_time": "18:00:00",
+        "category": "WORK",
+        "location": "Dubai",
+        "notes": "Some notes"
+    }
+}, {
+    "model": "events.event",
+    "pk": 2,
+    "fields": {
+        "owner": 2,
+        "name": "Samu's Birthday",
+        "date": "2024-11-07",
+        "start_time": "00:00:00",
+        "end_time": "23:59:00",
+        "category": "SOC",
+        "location": "Helsinki",
+        "notes": ""
+    }
+}, {
+    "model": "events.event",
+    "pk": 4,
+    "fields": {
+        "owner": 13,
+        "name": "It's Halloooooooween!",
+        "date": "2024-10-31",
+        "start_time": "18:00:00",
+        "end_time": "22:00:00",
+        "category": "SOC",
+        "location": "Dubai maybe",
+        "notes": "I am celebrating halloween in true Brooklyn 99 style. I love Halloweeeeeen!"
+    }
+}, {
+    "model": "events.event",
+    "pk": 5,
+    "fields": {
+        "owner": 13,
+        "name": "Wooyoung's Birthday",
+        "date": "2024-11-26",
+        "start_time": "00:00:00",
+        "end_time": "23:59:00",
+        "category": "SOC",
+        "location": "Seoul",
+        "notes": ""
+    }
+}, {
+    "model": "events.event",
+    "pk": 12,
+    "fields": {
+        "owner": 7,
+        "name": "lowercase event title",
+        "date": "2024-10-30",
+        "start_time": "11:45:00",
+        "end_time": "12:00:00",
+        "category": "EDU",
+        "location": "My computer",
+        "notes": ""
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 3,
+    "fields": {
+        "owner": 2,
+        "title": "Test task",
+        "due_date": "2024-10-11T12:00:00Z",
+        "created_on": "2024-10-06T15:29:04.778Z",
+        "updated_on": "2024-10-06T15:29:04.778Z",
+        "priority": "L",
+        "category": "WORK",
+        "description": "I am creating a test task.",
+        "completed": false
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 5,
+    "fields": {
+        "owner": 2,
+        "title": "Test task 2",
+        "due_date": "2024-10-13T19:51:00Z",
+        "created_on": "2024-10-06T15:59:02.262Z",
+        "updated_on": "2024-10-06T15:59:02.262Z",
+        "priority": "L",
+        "category": "PER",
+        "description": "Hello",
+        "completed": false
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 6,
+    "fields": {
+        "owner": 3,
+        "title": "Add test table for creating task api endpoint",
+        "due_date": "2024-10-06T20:10:00Z",
+        "created_on": "2024-10-06T16:09:03.407Z",
+        "updated_on": "2024-10-07T08:29:59.156Z",
+        "priority": "H",
+        "category": "WORK",
+        "description": "Add a row to the test table",
+        "completed": true
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 8,
+    "fields": {
+        "owner": 3,
+        "title": "Create view for updating and deleting tasks",
+        "due_date": "2024-10-07T13:00:00Z",
+        "created_on": "2024-10-07T08:03:29.841Z",
+        "updated_on": "2024-10-07T08:03:29.841Z",
+        "priority": "H",
+        "category": "WORK",
+        "description": "",
+        "completed": false
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 9,
+    "fields": {
+        "owner": 3,
+        "title": "New task",
+        "due_date": "2024-10-07T15:00:00Z",
+        "created_on": "2024-10-07T08:48:35.556Z",
+        "updated_on": "2024-10-07T08:48:35.556Z",
+        "priority": "L",
+        "category": "WORK",
+        "description": "A new task",
+        "completed": false
+    }
+}, {
+    "model": "tasks.task",
+    "pk": 10,
+    "fields": {
+        "owner": 3,
+        "title": "test",
+        "due_date": "2024-10-07T15:30:00Z",
+        "created_on": "2024-10-07T11:27:45.124Z",
+        "updated_on": "2024-10-07T11:27:45.124Z",
+        "priority": "L",
+        "category": "WORK",
+        "description": "",
+        "completed": false
+    }
+},
+{
+    "model": "notes.note",
+    "pk": 1,
+    "fields": {
+        "owner": 2,
+        "title": "",
+        "date_created": "2024-10-08T14:14:12.378Z",
+        "date_updated": "2024-10-08T14:14:12.378Z",
+        "content": "Hello I am mariam and I am creating a test note for testing purposes. I said test a lot. I bought tickets to see Ateez today yay!"
+    }
+}, {
+    "model": "notes.note",
+    "pk": 3,
+    "fields": {
+        "owner": 2,
+        "title": "Another new note",
+        "date_created": "2024-10-08T15:36:36.350Z",
+        "date_updated": "2024-10-08T15:36:36.350Z",
+        "content": "I am creating another note to test my api."
+    }
+}, {
+    "model": "notes.note",
+    "pk": 4,
+    "fields": {
+        "owner": 3,
+        "title": "Update this note",
+        "date_created": "2024-10-08T15:43:21.922Z",
+        "date_updated": "2024-10-08T15:44:59.526Z",
+        "content": "Please update me. this is the updated text."
+    }
+}]
