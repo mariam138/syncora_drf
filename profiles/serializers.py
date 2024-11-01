@@ -41,13 +41,18 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     # Update the email field in the api to hide user's emails
     # For security reasons. If no email was provided in sign up,
-    # display that response instead
+    # display that response instead.
+    # Only display profile's email to the owner
     # Adapted from the REST docs:
     # https://www.django-rest-framework.org/api-guide/serializers/#overriding-serialization-and-deserialization-behavior
     def to_representation(self, instance):
         rep = super().to_representation(instance)
+        request = self.context["request"]
         if instance.user.email:
-            rep["email"] = "Hidden"
+            if request.user == instance.user:
+                rep["email"] = rep["email"]
+            else:
+                rep["email"] = "Hidden"
         else:
             rep["email"] = "No email provided"
         # Capitalise user's names if they enter it lowercase on sign up
