@@ -10,10 +10,13 @@ class TaskSerializer(serializers.ModelSerializer):
     https://github.com/encode/django-rest-framework/issues/1755#issuecomment-945167944
     and the comment below it.
     """
-    category_display = serializers.CharField(source="get_category_display", read_only=True)
+    category_display = serializers.CharField(
+        source="get_category_display", read_only=True
+    )
     due_date = serializers.DateTimeField(
         input_formats=["%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M"]
     )
+    priority = serializers.CharField(source="get_priority_display")
 
     class Meta:
         model = Task
