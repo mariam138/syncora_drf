@@ -13,9 +13,7 @@ class TaskSerializer(serializers.ModelSerializer):
     category_display = serializers.CharField(
         source="get_category_display", read_only=True
     )
-    due_date = serializers.DateTimeField(
-        input_formats=["%Y-%m-%dT%H:%M"]
-    )
+    due_date = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
     priority = serializers.CharField(source="get_priority_display")
 
     class Meta:
