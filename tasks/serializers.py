@@ -14,7 +14,7 @@ class TaskSerializer(serializers.ModelSerializer):
         source="get_category_display", read_only=True
     )
     due_date = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
-    priority = serializers.CharField(source="get_priority_display")
+    priority_display = serializers.CharField(source="get_priority_display")
 
     # Ensure task title is capitalised
     def to_representation(self, instance):
@@ -30,6 +30,7 @@ class TaskSerializer(serializers.ModelSerializer):
             "title",
             "due_date",
             "priority",
+            "priority_display",
             "category",
             "category_display",
             "description",
