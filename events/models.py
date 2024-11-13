@@ -30,7 +30,7 @@ class Event(models.Model):
     notes = models.TextField(blank=True)
 
     class Meta:
-        ordering = ["date"]
+        ordering = ["-date"]
 
     def __str__(self):
         return f"{self.name} | {self.date}"
